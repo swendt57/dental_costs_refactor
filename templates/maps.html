@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container map-container">
+
+    <h3>Dental Office Locations</h3>
+
+    <p>The Google maps below show the locations of all the dentists from the <a href="top-ten-affordable.html">Top 10
+        Affordable</a> page. The <span class="blue"><strong>blue circles</strong></span> indicate multiple offices.
+        Click/press
+        the circle and the map will automatically zoom in and show the individual dental offices.</p>
+
+    <!--San Diego locations with legend-->
+    <div id="sdMap-container">
+        <h4>San Diego</h4>
+        <div id="sdMap"></div>
+        <!--Map legend-->
+        <div class="map-key">
+            <table class="table">
+                <tr class="row">
+                    <td class="col-1">A</td>
+                    <td class="col-5">San Diego Smile Dentistry</td>
+                    <td class="col-1">F</td>
+                    <td class="col-5">Dean Van Nguyen, DDS</td>
+                </tr>
+                <tr class="row">
+                    <td class="col-1">B</td>
+                    <td class="col-5">Great Smile Dental</td>
+                    <td class="col-1">G</td>
+                    <td class="col-5">La Mesa Dental</td>
+                </tr>
+                <tr class="row">
+                    <td class="col-1">C
+                    <td class="col-5">Dental Express</td>
+                    <td class="col-1">H</td>
+                    <td class="col-5">Mission Family Dental</td>
+                </tr>
+                <tr class="row">
+                    <td class="col-1">D</td>
+                    <td class="col-5">Bay View Dental</td>
+                    <td class="col-1">I</td>
+                    <td class="col-5">Linda Vista Dentistry</td>
+                </tr>
+                <tr class="row">
+                    <td class="col-1">E</td>
+                    <td class="col-5">David Eshom, DDS</td>
+                    <td class="col-1">J</td>
+                    <td class="col-5">Mesa Dental</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--Tijuana locations with legend-->
+    <div id="tjMap-container">
+        <h4>Tijuana</h4>
+        <div id="tjMap"></div>
+        <!--ap legend-->
+        <div class="map-key">
+            <table class="table">
+                <tr class="row">
+                    <td class="col-1">A</td>
+                    <td class="col-5">Great Smile Dental</td>
+                    <td class="col-1">F</td>
+                    <td class="col-5">Liberty Dental Clinic</td>
+                </tr>
+                <tr class="row">
+                    <td class="col-1">B</td>
+                    <td class="col-5">Dr Ignacio de la Vega</td>
+                    <td class="col-1">G</td>
+                    <td class="col-5">Dental Alvarez</td>
+                </tr>
+                <tr class="row">
+                    <td class="col-1">C
+                    <td class="col-5">Advanced Smiles Dentistry</td>
+                    <td class="col-1">H</td>
+                    <td class="col-5">Tijuana Clinic</td>
+                </tr>
+                <tr class="row">
+                    <td class="col-1">D</td>
+                    <td class="col-5">I Love My Dentist</td>
+                    <td class="col-1">I</td>
+                    <td class="col-5">Odontologia Integral</td>
+                </tr>
+                <tr class="row">
+                    <td class="col-1">E</td>
+                    <td class="col-5">Washington Dental Clinic</td>
+                    <td class="col-1">J</td>
+                    <td class="col-5">American Bio-Dental Center</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+{%  endblock %}
+
+{%  block scripts %}
+
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script src="{{ url_for('static', filename='js/ak.js') }}"></script>
+<script src="{{ url_for('static', filename='js/maps.js') }}"></script>
+
+{% endblock %}

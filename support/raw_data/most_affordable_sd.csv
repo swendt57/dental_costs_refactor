@@ -1,0 +1,11 @@
+name,abbreviation,address,area,city,state,zip,phone,latitude,longitude,adult_cleaning,composite_filling,extraction,root_canal,porcelain_crown,website,fake_data
+San Diego Smile Dentistry,SD Smile,7710 Balboa Ave,Kearny Mesa,San Diego,CA,92111,(619) 737-6453,32.82225,-117.157913,105,140,110,725,850,https://sd-smile.com/,*
+Great Smile Dental,Great Smile,5210 Balboa Ave,Clairemont,San Diego,CA,92117,(858) 598-5842,32.81897,-117.183968,95,120,110,765,1105,https://great-smile-dental-orthodontics-and-periodontics.business.site/,*
+Dental Express,Express,4110 W Point Loma Blvd,Midway,San Diego,CA,92110,(619) 304-7327,32.753737,-117.223805,100,120,125,785,950,https://thedentalexpress.com/w-point-loma-blvd/,*
+Bay View Dental,Bay View,3737 Moraga Ave,Clairemont,San Diego,CA,92117,(858) 274-4400,32.809311,-117.210185,110,135,130,780,1100,https://www.markemersondds.com/,*
+"David Eshom, DDS",Eshom,8899 University Center Ln,University City,San Diego,CA,92122,(858) 201-4475,32.869946,-117.227591,130,250,250,850,1350,https://www.eshomdds.com/,
+"Dean Van Nguyen, DDS",Nguyen,4082 30th St,North Park,San Diego,CA,92104,(619) 283-6381,32.751887,-117.130512,120,180,180,810,1150,https://www.laserimplantdental.com/,*
+La Mesa Dental,La Mesa,7872 La Mesa Blvd,La Mesa,La Mesa,CA,91942,(619) 464-1211,32.767208,-117.027936,100,160,170,795,1010,http://www.lamesadental.com/,*
+Mission Family Dental,Mission,5995 Mission Gorge Rd,Grantville,San Diego,CA,92120,(619) 280-6500,32.78275,-117.098264,107,175,155,805,965,http://sandiegoperfectsmiles.com/,*
+Linda Vista Dentistry,Linda Vista,7440 Beagle St,Clairemont,San Diego,CA,92111,(858) 384-2083,32.807663,-117.160985,110,150,160,810,890,N/A,*
+Mesa Dental,Mesa,7625 Mesa College Dr,Clairemont,San Diego,CA,92111,(858) 877-9540,32.800802,-117.157321,100,130,150,750,1010,https://mesadentalsd.com/,*

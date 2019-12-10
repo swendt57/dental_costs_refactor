@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <style> {{ page }} {
+        color: #fbe22e;
+    } </style>
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<header>
+    <div id="header-bg"></div>
+
+    <div class="container">
+        <nav class="navbar fixed-top navbar-expand-lg">
+
+            <a class="navbar-brand" href="index.html">
+                <span class="title">Dental Cost Information</span>
+                <!-- one or the other depending on screen size -->
+                <div class="sub-title d-none d-md-block">San Diego, California vs Tijuana, Mexico</div>
+                <div class="sub-title d-xs-block d-md-none">San Diego vs Tijuana</div>
+            </a>
+
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--TODO toggler not opening/closing drop-down-->
+            <div class="collapse navbar-collapse" id="navbarToggler">
+
+                <!-- INFO this needs to be here in order to have the buttons right justified - there has to be a better way -->
+                <ul class="navbar-nav mr-auto mt-2 mt-md-0"></ul>
+
+                <ul class="nav navbar-nav text-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><span class="home"><span
+                                class="nav-text">Home</span></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="top-ten-affordable.html"><span class="top-ten"><span class="nav-text">Top 10 Affordable</span></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cost-comparisons.html"><span class="comparisons"><span
+                                class="nav-text">Cost Comparisons</span></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="maps.html"><span class="maps"><span
+                                class="nav-text">Location Maps</span></span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+</header>
+
+<section>
+
+{% block content %} {% endblock %}
+
+</section>
+
+<footer>
+    <hr class="footer-hr">
+    <p class="footer-text">Map data is &copy;2019 by Google &mdash; Top 10 lists are &copy;2019 Yelp Inc.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+{% block scripts %} {% endblock %}
+
+</body>
+</html>

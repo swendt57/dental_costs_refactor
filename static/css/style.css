@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css?family=Mouse+Memoirs|Lato:400,400i,700,700i|Roboto:300,400,500,600,700&display=swap');
+
+/* BS OR = Bootstrap Override */
+
+/*---------------General Styles---------------*/
+
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: table; /* used to position footer at bottom of short pages */
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    background-color: rgba(255,250,240,.2);
+}
+
+section {
+    padding-top: 95px;
+    margin: 0 20px;
+}
+
+h3 {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+p {
+    margin: 20px 10px;
+}
+
+.blue {
+    color: dodgerblue;
+}
+
+.footnote {
+    font-size: 12px;
+    margin: auto 20px;
+}
+
+/* styles for tablet */
+@media (min-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    section {
+        padding-top: 100px;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+}
+
+/* styles for desktop */
+@media (min-width: 992px) {
+    body {
+        font-size: 16px;
+    }
+
+    section {
+        padding-top: 120px;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+}
+
+/* --------------------Header Styles-------------------- */
+
+#header-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background-image: linear-gradient(#0097ac, #007E8C);
+    box-shadow: 1px 1px 4px 4px rgba(0,0,0,0.25);
+    z-index: 1050;
+}
+
+.title,
+.sub-title,
+.nav-text {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.title {
+    font-size: 20px;
+    letter-spacing: .04rem;
+    color: honeydew;
+}
+.sub-title {
+    font-size: 16px;
+    letter-spacing: .04rem;
+    padding-top: -10px;
+    color: honeydew;
+}
+
+.nav-text {
+    font-size: 16px;
+}
+
+/* BS OR */
+.navbar {
+    background-image: linear-gradient(#0097ac, #007E8C);
+    z-index: 1100;
+    padding: .25rem 1rem .5rem 1rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/*BS OR*/
+a.navbar-brand {
+    margin-right: 8px;
+    color: black;
+}
+
+a.nav-link {
+    margin-right: 4px;;
+    color: honeydew;
+}
+
+a.nav-link:hover {
+    background: rgba(0,0,0,.1);
+    border-radius: 8px;
+    color: #fbe22e;
+}
+
+/*BS OR*/
+.navbar-toggler {
+    padding: 4px;
+    border: 2px solid honeydew;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='honeydew' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+/* styles for tablet */
+@media (min-width: 768px) {
+    #header-bg {
+        height: 80px;
+        box-shadow: 1px 1px 4.5px 4.5px rgba(0,0,0,0.25);
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .sub-titlw {
+        font-size: 18px;
+    }
+
+    .nav-text {
+        font-size: 16px;
+    }
+}
+
+/* styles for desktop */
+@media (min-width: 992px) {
+    #header-bg {
+        height: 88px;
+        box-shadow: 1px 1px 5px 5px rgba(0,0,0,0.25);
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .sub-title {
+        font-size: 20px;
+    }
+
+    .nav-text {
+        font-size: 18px;
+    }
+}
+
+/* --------------------Home Styles-------------------- */
+
+span i {
+    color: #0097ac;
+    vertical-align: text-top;
+    float: left;
+    padding: 10px 10px 5px 0;
+}
+
+/* --------------------Top 10 Styles-------------------- */
+.plainList {
+    list-style-type: none;
+    font-size: .85rem;
+}
+
+.plainList a {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.plainList a:hover {
+    color: #de5355;
+}
+
+div>h4 {
+    padding: 8px 8px 2px;
+    color: #93499e;
+    font-family: "Mouse Memoirs", sans-serif;
+    font-size: 1.5rem;
+}
+
+#sdDentist {
+    margin: 20px auto 0;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    border: 1px solid black;
+}
+
+#sdDentist:before {
+    pointer-events: none; /* this allows the hyperlinks to be clicked */
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.08;
+    background-image: url('../images/usa_flag.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#tjDentist {
+    margin: 20px auto 0;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    border: 1px solid black;
+ }
+
+#tjDentist:before {
+    pointer-events: none; /* this allows the hyperlinks to be clicked */
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.08;
+    background-image: url('../images/mexico_flag.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+/* styles for tablet */
+@media (min-width: 768px) {
+    .plainList {
+        font-size: .9rem;
+    }
+
+    .plainList a {
+        font-size: 1.1rem;
+    }
+
+    div>h4 {
+        padding: 10px 10px 3px;
+        font-size: 1.75rem;
+        position: relative;
+    }
+
+    #sdDentist {
+        width: 500px;
+    }
+
+   #tjDentist {
+       width: 500px;
+    }
+}
+
+/* styles for desktop */
+@media (min-width: 1025px) {
+    .plainList {
+        font-size: 1rem;
+    }
+
+    .plainList a {
+        font-size: 1.2rem;
+    }
+
+    div>h4 {
+        padding: 15px 15px 5px;
+        font-size: 2rem;
+    }
+
+    #sdDentist {
+        width: 550px;
+        position: relative;
+        float: left;
+    }
+
+    #tjDentist {
+        width: 550px;
+        position: relative;
+        float: right;
+    }
+}
+
+/* --------------------Comparisons-------------------- */
+
+.chart-intro {
+    max-width: 800px;
+    margin: 25px auto;
+}
+
+.smartphone-message {
+    width: 300px;
+    color: darkred;
+}
+
+/* OVERLAY CHART */
+#overlay-chart-container {
+    width: 100%;
+}
+
+#overlay-chart-container svg {
+    margin: auto;
+}
+
+.sdBar {
+    fill: #4e92c3;
+    opacity: 0.7;
+}
+
+.tjBar {
+    fill: #57b358;
+    opacity: 0.7;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
+}
+
+.axis {
+    font: 10px sans-serif;
+}
+
+text.label {
+    fill: black;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+text.legend {
+    text-align: left;
+    fill: black;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* styles for tablet and above */
+@media (min-width: 768px) {
+    #overlay-bar-chart {
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* SCATTER CHARTS */
+#scatter-chart-master-container {
+    width: 100%;
+    padding-top: 25px;
+}
+
+#scatter-chart-container {
+    width: 600px;
+    margin: 20px auto;
+}
+
+#scatter-chart-container svg {
+    margin: auto;
+}
+
+/* styles for tablet and above */
+@media (min-width: 768px) {
+    #scatter-chart-container {
+        width: 750px;
+        margin: 20px auto;
+    }
+
+    #scatter-chart {
+        margin-left: 50px;
+    }
+}
+
+/* PIE CHARTS */
+
+#pie-chart-master-container {
+    width: 100%;
+    padding-top: 25px;
+}
+
+#pie-chart-container {
+    max-width: 700px;
+    height: 400px;
+    margin: 20px auto;
+}
+
+#sd-pie-chart {
+    width: 320px;
+    height: 350px;
+    padding: 0 20px;
+    position: absolute;
+    float: left;
+}
+
+#tj-pie-chart {
+    width: 320px;
+    height: 350px;
+    padding: 0 20px;
+    position: relative;
+    float: right;
+}
+
+p.chart-label {
+    margin: 10px;
+    padding: 0;
+    text-align: center;
+}
+
+.pie-label {
+    font-size: 14px;
+}
+
+.city-label {
+    text-align: center;
+    margin: 0 20px 0 0;
+    font-weight: 500;
+}
+
+
+/* --------------------Maps-------------------- */
+
+#sdMap {
+    min-height: 400px; /* MUST have this in order for map to display! */
+    width: 300px;
+    margin: 10px auto;
+    border: 1px solid black;
+}
+
+#tjMap {
+    min-height: 400px; /* MUST have this in order for map to display! */
+    width: 300px;
+    margin: 10px auto;
+    border: 1px solid black;
+}
+
+#sdMap-container {
+    width: 320px;
+    margin: auto;
+}
+
+#tjMap-container {
+    width: 320px;
+    margin: auto;
+}
+
+.map-container td {
+    padding: 0 5px;
+    font-size: .7rem;
+}
+
+/* styles for tablet */
+@media (min-width: 768px) {
+    #sdMap {
+        min-height: 500px;
+        margin: auto;
+        width: 550px;
+    }
+
+    #tjMap {
+        min-height: 500px;
+        margin: auto;
+        width: 550px;
+    }
+
+    #sdMap-container {
+        width: 550px;
+    }
+
+    #tjMap-container {
+        width: 550px;
+    }
+
+    .map-container td {
+        padding: 5px 10px;
+        font-size: 1rem;
+    }
+
+}
+
+/* styles for desktop */
+@media (min-width: 1025px) {
+    #sdMap {
+        min-height: 500px;
+        margin: auto;
+        width: 530px;
+    }
+
+    #tjMap {
+        min-height: 500px;
+        margin: auto;
+        width: 530px;
+    }
+
+    #sdMap-container {
+        width: 550px;
+        float: left;
+    }
+
+    #tjMap-container {
+        width: 550px;
+        float: right;
+    }
+
+    .map-key {
+        width: 500px;
+        margin: 25px auto;
+    }
+}
+
+/* --------------------Footer-------------------- */
+
+footer {
+    width: 100%;
+    font-size: 12px;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    display: table-row; /* used to position footer at bottom of short pages */
+    height: 0;
+}
+
+.footer-text {
+    margin: 0 auto 15px auto;
+}
+
+.footer-hr {
+    height: 2px;
+    width: 40%;
+    background-color: #0097ac;
+    margin: 30px auto 5px auto;
+    text-align: center;
+}
+
+/* styles for tablet and above */
+@media (min-width: 768px) {
+    footer {
+        font-size: 14px;
+    }
+}

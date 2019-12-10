@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container">
+        <h3>Top 10 Most<br>Affordable Dentists*</h3>
+
+        <p>The external links below launch Google Maps and provide directions to that dental office from your location.</p>
+
+        <!--Top 10 San Diego List-->
+        <div id="sdDentist">
+            <h4>San Diego Area</h4>
+            <ul id="sdList" class="plainList">
+            </ul>
+            <span class="footnote">*as shown on Yelp.com September 2019</span>
+        </div>
+
+        <!--Top 10 Tijuana List-->
+        <div id="tjDentist">
+            <h4>Tijuana Area</h4>
+            <ul id="tjList" class="plainList">
+            </ul>
+            <span class="footnote">*as shown on Yelp.com September 2019</span>
+        </div>
+
+    </div>
+
+{%  endblock %}
+
+{%  block scripts %}
+
+<script src="{{ url_for('static', filename='raw_data/san_diego_data.js') }}"></script>
+<script src="{{ url_for('static', filename='raw_data/tijuana_data.js') }}"></script>
+<script src="{{ url_for('static', filename='js/top-ten-affordable.js') }}"></script>
+
+{% endblock %}

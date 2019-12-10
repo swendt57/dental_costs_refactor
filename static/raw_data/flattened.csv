@@ -1,0 +1,101 @@
+name,abbreviation,address,area,city,state,zip,phone,latitude,longitude,procedure,cost,website,fake_data
+San Diego Smile Dentistry,SD Smile,7710 Balboa Ave,Kearny Mesa,San Diego,CA,92111,(619) 737-6453,32.82225,-117.157913,Adult Cleaning,105,https://sd-smile.com/,Mock Data
+San Diego Smile Dentistry,SD Smile,7710 Balboa Ave,Kearny Mesa,San Diego,CA,92111,(619) 737-6453,32.82225,-117.157913,Composite Filling,140,https://sd-smile.com/,Mock Data
+San Diego Smile Dentistry,SD Smile,7710 Balboa Ave,Kearny Mesa,San Diego,CA,92111,(619) 737-6453,32.82225,-117.157913,Extraction,110,https://sd-smile.com/,Mock Data
+San Diego Smile Dentistry,SD Smile,7710 Balboa Ave,Kearny Mesa,San Diego,CA,92111,(619) 737-6453,32.82225,-117.157913,Root Canal,725,https://sd-smile.com/,Mock Data
+San Diego Smile Dentistry,SD Smile,7710 Balboa Ave,Kearny Mesa,San Diego,CA,92111,(619) 737-6453,32.82225,-117.157913,Porcelain Crown,850,https://sd-smile.com/,Mock Data
+Great Smile Dental,Great Smile,5210 Balboa Ave,Clairemont,San Diego,CA,92117,(858) 598-5842,32.81897,-117.183968,Adult Cleaning,95,https://great-smile-dental-orthodontics-and-periodontics.business.site/,Mock Data
+Great Smile Dental,Great Smile,5210 Balboa Ave,Clairemont,San Diego,CA,92117,(858) 598-5842,32.81897,-117.183968,Composite Filling,120,https://great-smile-dental-orthodontics-and-periodontics.business.site/,Mock Data
+Great Smile Dental,Great Smile,5210 Balboa Ave,Clairemont,San Diego,CA,92117,(858) 598-5842,32.81897,-117.183968,Extraction,110,https://great-smile-dental-orthodontics-and-periodontics.business.site/,Mock Data
+Great Smile Dental,Great Smile,5210 Balboa Ave,Clairemont,San Diego,CA,92117,(858) 598-5842,32.81897,-117.183968,Root Canal,765,https://great-smile-dental-orthodontics-and-periodontics.business.site/,Mock Data
+Great Smile Dental,Great Smile,5210 Balboa Ave,Clairemont,San Diego,CA,92117,(858) 598-5842,32.81897,-117.183968,Porcelain Crown,1105,https://great-smile-dental-orthodontics-and-periodontics.business.site/,Mock Data
+Dental Express,Express,4110 W Point Loma Blvd,Midway,San Diego,CA,92110,(619) 304-7327,32.753737,-117.223805,Adult Cleaning,100,https://thedentalexpress.com/w-point-loma-blvd/,Mock Data
+Dental Express,Express,4110 W Point Loma Blvd,Midway,San Diego,CA,92110,(619) 304-7327,32.753737,-117.223805,Composite Filling,120,https://thedentalexpress.com/w-point-loma-blvd/,Mock Data
+Dental Express,Express,4110 W Point Loma Blvd,Midway,San Diego,CA,92110,(619) 304-7327,32.753737,-117.223805,Extraction,125,https://thedentalexpress.com/w-point-loma-blvd/,Mock Data
+Dental Express,Express,4110 W Point Loma Blvd,Midway,San Diego,CA,92110,(619) 304-7327,32.753737,-117.223805,Root Canal,785,https://thedentalexpress.com/w-point-loma-blvd/,Mock Data
+Dental Express,Express,4110 W Point Loma Blvd,Midway,San Diego,CA,92110,(619) 304-7327,32.753737,-117.223805,Porcelain Crown,950,https://thedentalexpress.com/w-point-loma-blvd/,Mock Data
+Bay View Dental,Bay View,3737 Moraga Ave,Clairemont,San Diego,CA,92117,(858) 274-4400,32.809311,-117.210185,Adult Cleaning,110,https://www.markemersondds.com/,Mock Data
+Bay View Dental,Bay View,3737 Moraga Ave,Clairemont,San Diego,CA,92117,(858) 274-4400,32.809311,-117.210185,Composite Filling,135,https://www.markemersondds.com/,Mock Data
+Bay View Dental,Bay View,3737 Moraga Ave,Clairemont,San Diego,CA,92117,(858) 274-4400,32.809311,-117.210185,Extraction,130,https://www.markemersondds.com/,Mock Data
+Bay View Dental,Bay View,3737 Moraga Ave,Clairemont,San Diego,CA,92117,(858) 274-4400,32.809311,-117.210185,Root Canal,780,https://www.markemersondds.com/,Mock Data
+Bay View Dental,Bay View,3737 Moraga Ave,Clairemont,San Diego,CA,92117,(858) 274-4400,32.809311,-117.210185,Porcelain Crown,1100,https://www.markemersondds.com/,Mock Data
+"David Eshom, DDS",Eshom,8899 University Center Ln,University City,San Diego,CA,92122,(858) 201-4475,32.869946,-117.227591,Adult Cleaning,130,https://www.eshomdds.com/,Actual Data
+"David Eshom, DDS",Eshom,8899 University Center Ln,University City,San Diego,CA,92122,(858) 201-4475,32.869946,-117.227591,Composite Filling,250,https://www.eshomdds.com/,Actual Data
+"David Eshom, DDS",Eshom,8899 University Center Ln,University City,San Diego,CA,92122,(858) 201-4475,32.869946,-117.227591,Extraction,250,https://www.eshomdds.com/,Actual Data
+"David Eshom, DDS",Eshom,8899 University Center Ln,University City,San Diego,CA,92122,(858) 201-4475,32.869946,-117.227591,Root Canal,850,https://www.eshomdds.com/,Actual Data
+"David Eshom, DDS",Eshom,8899 University Center Ln,University City,San Diego,CA,92122,(858) 201-4475,32.869946,-117.227591,Porcelain Crown,1350,https://www.eshomdds.com/,Actual Data
+"Dean Van Nguyen, DDS",Nguyen,4082 30th St,North Park,San Diego,CA,92104,(619) 283-6381,32.751887,-117.130512,Adult Cleaning,120,https://www.laserimplantdental.com/,Mock Data
+"Dean Van Nguyen, DDS",Nguyen,4082 30th St,North Park,San Diego,CA,92104,(619) 283-6381,32.751887,-117.130512,Composite Filling,180,https://www.laserimplantdental.com/,Mock Data
+"Dean Van Nguyen, DDS",Nguyen,4082 30th St,North Park,San Diego,CA,92104,(619) 283-6381,32.751887,-117.130512,Extraction,180,https://www.laserimplantdental.com/,Mock Data
+"Dean Van Nguyen, DDS",Nguyen,4082 30th St,North Park,San Diego,CA,92104,(619) 283-6381,32.751887,-117.130512,Root Canal,810,https://www.laserimplantdental.com/,Mock Data
+"Dean Van Nguyen, DDS",Nguyen,4082 30th St,North Park,San Diego,CA,92104,(619) 283-6381,32.751887,-117.130512,Porcelain Crown,1150,https://www.laserimplantdental.com/,Mock Data
+La Mesa Dental,La Mesa,7872 La Mesa Blvd,La Mesa,San Diego,CA,91942,(619) 464-1211,32.767208,-117.027936,Adult Cleaning,100,http://www.lamesadental.com/,Mock Data
+La Mesa Dental,La Mesa,7872 La Mesa Blvd,La Mesa,San Diego,CA,91942,(619) 464-1211,32.767208,-117.027936,Composite Filling,160,http://www.lamesadental.com/,Mock Data
+La Mesa Dental,La Mesa,7872 La Mesa Blvd,La Mesa,San Diego,CA,91942,(619) 464-1211,32.767208,-117.027936,Extraction,170,http://www.lamesadental.com/,Mock Data
+La Mesa Dental,La Mesa,7872 La Mesa Blvd,La Mesa,San Diego,CA,91942,(619) 464-1211,32.767208,-117.027936,Root Canal,795,http://www.lamesadental.com/,Mock Data
+La Mesa Dental,La Mesa,7872 La Mesa Blvd,La Mesa,San Diego,CA,91942,(619) 464-1211,32.767208,-117.027936,Porcelain Crown,1010,http://www.lamesadental.com/,Mock Data
+Mission Family Dental,Mission,5995 Mission Gorge Rd,Grantville,San Diego,CA,92120,(619) 280-6500,32.78275,-117.098264,Adult Cleaning,107,http://sandiegoperfectsmiles.com/,Mock Data
+Mission Family Dental,Mission,5995 Mission Gorge Rd,Grantville,San Diego,CA,92120,(619) 280-6500,32.78275,-117.098264,Composite Filling,175,http://sandiegoperfectsmiles.com/,Mock Data
+Mission Family Dental,Mission,5995 Mission Gorge Rd,Grantville,San Diego,CA,92120,(619) 280-6500,32.78275,-117.098264,Extraction,155,http://sandiegoperfectsmiles.com/,Mock Data
+Mission Family Dental,Mission,5995 Mission Gorge Rd,Grantville,San Diego,CA,92120,(619) 280-6500,32.78275,-117.098264,Root Canal,805,http://sandiegoperfectsmiles.com/,Mock Data
+Mission Family Dental,Mission,5995 Mission Gorge Rd,Grantville,San Diego,CA,92120,(619) 280-6500,32.78275,-117.098264,Porcelain Crown,965,http://sandiegoperfectsmiles.com/,Mock Data
+Linda Vista Dentistry,Linda Vista,7440 Beagle St,Clairemont,San Diego,CA,92111,(858) 384-2083,32.807663,-117.160985,Adult Cleaning,110,N/A,Mock Data
+Linda Vista Dentistry,Linda Vista,7440 Beagle St,Clairemont,San Diego,CA,92111,(858) 384-2083,32.807663,-117.160985,Composite Filling,150,N/A,Mock Data
+Linda Vista Dentistry,Linda Vista,7440 Beagle St,Clairemont,San Diego,CA,92111,(858) 384-2083,32.807663,-117.160985,Extraction,160,N/A,Mock Data
+Linda Vista Dentistry,Linda Vista,7440 Beagle St,Clairemont,San Diego,CA,92111,(858) 384-2083,32.807663,-117.160985,Root Canal,810,N/A,Mock Data
+Linda Vista Dentistry,Linda Vista,7440 Beagle St,Clairemont,San Diego,CA,92111,(858) 384-2083,32.807663,-117.160985,Porcelain Crown,890,N/A,Mock Data
+Mesa Dental,Mesa,7625 Mesa College Dr,Clairemont,San Diego,CA,92111,(858) 877-9540,32.800802,-117.157321,Adult Cleaning,100,https://mesadentalsd.com/,Mock Data
+Mesa Dental,Mesa,7625 Mesa College Dr,Clairemont,San Diego,CA,92111,(858) 877-9540,32.800802,-117.157321,Composite Filling,130,https://mesadentalsd.com/,Mock Data
+Mesa Dental,Mesa,7625 Mesa College Dr,Clairemont,San Diego,CA,92111,(858) 877-9540,32.800802,-117.157321,Extraction,150,https://mesadentalsd.com/,Mock Data
+Mesa Dental,Mesa,7625 Mesa College Dr,Clairemont,San Diego,CA,92111,(858) 877-9540,32.800802,-117.157321,Root Canal,750,https://mesadentalsd.com/,Mock Data
+Mesa Dental,Mesa,7625 Mesa College Dr,Clairemont,San Diego,CA,92111,(858) 877-9540,32.800802,-117.157321,Porcelain Crown,1010,https://mesadentalsd.com/,Mock Data
+Smile Builders,Smile Builders,Av Revolucion 993,Zona Centro,Tijuana,Baja California,22000,(619) 259-6751,32.526848,-117.036049,Adult Cleaning,45,https://smilebuilders.net/,Actual Data
+Smile Builders,Smile Builders,Av Revolucion 993,Zona Centro,Tijuana,Baja California,22000,(619) 259-6751,32.526848,-117.036049,Composite Filling,75,https://smilebuilders.net/,Actual Data
+Smile Builders,Smile Builders,Av Revolucion 993,Zona Centro,Tijuana,Baja California,22000,(619) 259-6751,32.526848,-117.036049,Extraction,80,https://smilebuilders.net/,Actual Data
+Smile Builders,Smile Builders,Av Revolucion 993,Zona Centro,Tijuana,Baja California,22000,(619) 259-6751,32.526848,-117.036049,Root Canal,400,https://smilebuilders.net/,Actual Data
+Smile Builders,Smile Builders,Av Revolucion 993,Zona Centro,Tijuana,Baja California,22000,(619) 259-6751,32.526848,-117.036049,Porcelain Crown,550,https://smilebuilders.net/,Actual Data
+Dr Ignacio de la Vega,Vega,Calle Emiliano Zapata 1717,Zona Centro,Tijuana,Baja California,22000,(619) 399-3538,32.480226,-117.015894,Adult Cleaning,40,http://www.drdelavega.com/,Mock Data
+Dr Ignacio de la Vega,Vega,Calle Emiliano Zapata 1717,Zona Centro,Tijuana,Baja California,22000,(619) 399-3538,32.480226,-117.015894,Composite Filling,65,http://www.drdelavega.com/,Mock Data
+Dr Ignacio de la Vega,Vega,Calle Emiliano Zapata 1717,Zona Centro,Tijuana,Baja California,22000,(619) 399-3538,32.480226,-117.015894,Extraction,85,http://www.drdelavega.com/,Mock Data
+Dr Ignacio de la Vega,Vega,Calle Emiliano Zapata 1717,Zona Centro,Tijuana,Baja California,22000,(619) 399-3538,32.480226,-117.015894,Root Canal,260,http://www.drdelavega.com/,Mock Data
+Dr Ignacio de la Vega,Vega,Calle Emiliano Zapata 1717,Zona Centro,Tijuana,Baja California,22000,(619) 399-3538,32.480226,-117.015894,Porcelain Crown,475,http://www.drdelavega.com/,Mock Data
+Advanced Smiles Dentistry,Adv Smiles,German Gedovius 10489,Zona Rio,Tijuana,Baja California,22010,(619) 488-1557,32.519606,-117.011157,Adult Cleaning,40,https://advancedsmilesdentistry.com/,Actual Data
+Advanced Smiles Dentistry,Adv Smiles,German Gedovius 10489,Zona Rio,Tijuana,Baja California,22010,(619) 488-1557,32.519606,-117.011157,Composite Filling,40,https://advancedsmilesdentistry.com/,Actual Data
+Advanced Smiles Dentistry,Adv Smiles,German Gedovius 10489,Zona Rio,Tijuana,Baja California,22010,(619) 488-1557,32.519606,-117.011157,Extraction,90,https://advancedsmilesdentistry.com/,Actual Data
+Advanced Smiles Dentistry,Adv Smiles,German Gedovius 10489,Zona Rio,Tijuana,Baja California,22010,(619) 488-1557,32.519606,-117.011157,Root Canal,250,https://advancedsmilesdentistry.com/,Actual Data
+Advanced Smiles Dentistry,Adv Smiles,German Gedovius 10489,Zona Rio,Tijuana,Baja California,22010,(619) 488-1557,32.519606,-117.011157,Porcelain Crown,450,https://advancedsmilesdentistry.com/,Actual Data
+I Love My Dentist,Love,Av Revolucion 868,Zona Centro,Tijuana,Baja California,22000,(619) 452-2823,32.526848,-117.036049,Adult Cleaning,45,https://ilovemydentist.com.mx/,Actual Data
+I Love My Dentist,Love,Av Revolucion 868,Zona Centro,Tijuana,Baja California,22000,(619) 452-2823,32.526848,-117.036049,Composite Filling,75,https://ilovemydentist.com.mx/,Actual Data
+I Love My Dentist,Love,Av Revolucion 868,Zona Centro,Tijuana,Baja California,22000,(619) 452-2823,32.526848,-117.036049,Extraction,80,https://ilovemydentist.com.mx/,Actual Data
+I Love My Dentist,Love,Av Revolucion 868,Zona Centro,Tijuana,Baja California,22000,(619) 452-2823,32.526848,-117.036049,Root Canal,400,https://ilovemydentist.com.mx/,Actual Data
+I Love My Dentist,Love,Av Revolucion 868,Zona Centro,Tijuana,Baja California,22000,(619) 452-2823,32.526848,-117.036049,Porcelain Crown,395,https://ilovemydentist.com.mx/,Actual Data
+Washington Dental Clinic,Washington,Av Revolucion 1673,Zona Centro,Tijuana,Baja California,22000,(619) 308-7098,32.526848,-117.036049,Adult Cleaning,50,http://washingtondentalclinics.com/,Actual Data
+Washington Dental Clinic,Washington,Av Revolucion 1673,Zona Centro,Tijuana,Baja California,22000,(619) 308-7098,32.526848,-117.036049,Composite Filling,40,http://washingtondentalclinics.com/,Actual Data
+Washington Dental Clinic,Washington,Av Revolucion 1673,Zona Centro,Tijuana,Baja California,22000,(619) 308-7098,32.526848,-117.036049,Extraction,40,http://washingtondentalclinics.com/,Actual Data
+Washington Dental Clinic,Washington,Av Revolucion 1673,Zona Centro,Tijuana,Baja California,22000,(619) 308-7098,32.526848,-117.036049,Root Canal,275,http://washingtondentalclinics.com/,Actual Data
+Washington Dental Clinic,Washington,Av Revolucion 1673,Zona Centro,Tijuana,Baja California,22000,(619) 308-7098,32.526848,-117.036049,Porcelain Crown,275,http://washingtondentalclinics.com/,Actual Data
+Liberty Dental Clinic,Liberty,Calle Benito Juarez 2da 2273,Zona Centro,Tijuana,Baja California,22000,(619) 319-8892,32.535822,-117.032179,Adult Cleaning,40,http://libertydentaltijuana.com/,Actual Data
+Liberty Dental Clinic,Liberty,Calle Benito Juarez 2da 2273,Zona Centro,Tijuana,Baja California,22000,(619) 319-8892,32.535822,-117.032179,Composite Filling,39,http://libertydentaltijuana.com/,Actual Data
+Liberty Dental Clinic,Liberty,Calle Benito Juarez 2da 2273,Zona Centro,Tijuana,Baja California,22000,(619) 319-8892,32.535822,-117.032179,Extraction,45,http://libertydentaltijuana.com/,Actual Data
+Liberty Dental Clinic,Liberty,Calle Benito Juarez 2da 2273,Zona Centro,Tijuana,Baja California,22000,(619) 319-8892,32.535822,-117.032179,Root Canal,250,http://libertydentaltijuana.com/,Actual Data
+Liberty Dental Clinic,Liberty,Calle Benito Juarez 2da 2273,Zona Centro,Tijuana,Baja California,22000,(619) 319-8892,32.535822,-117.032179,Porcelain Crown,225,http://libertydentaltijuana.com/,Actual Data
+Dental Alvarez,Alvarez,Av Mision de Loreto 3045,Zona Rio,Tijuana,Baja California,22320,(619) 734-0233,32.52055,-116.973236,Adult Cleaning,50,https://dentalalvarez.com/,Actual Data
+Dental Alvarez,Alvarez,Av Mision de Loreto 3045,Zona Rio,Tijuana,Baja California,22320,(619) 734-0233,32.52055,-116.973236,Composite Filling,60,https://dentalalvarez.com/,Actual Data
+Dental Alvarez,Alvarez,Av Mision de Loreto 3045,Zona Rio,Tijuana,Baja California,22320,(619) 734-0233,32.52055,-116.973236,Extraction,60,https://dentalalvarez.com/,Actual Data
+Dental Alvarez,Alvarez,Av Mision de Loreto 3045,Zona Rio,Tijuana,Baja California,22320,(619) 734-0233,32.52055,-116.973236,Root Canal,275,https://dentalalvarez.com/,Actual Data
+Dental Alvarez,Alvarez,Av Mision de Loreto 3045,Zona Rio,Tijuana,Baja California,22320,(619) 734-0233,32.52055,-116.973236,Porcelain Crown,300,https://dentalalvarez.com/,Actual Data
+Tijuana Clinic for Cosmetic Dentistry,TJ Clinic,Dr Atl 2084,Zona Rio,Tijuana,Baja California,22010,(619) 971-2297,32.524827,-117.014099,Adult Cleaning,40,https://www.tccdentistry.com/,Mock Data
+Tijuana Clinic for Cosmetic Dentistry,TJ Clinic,Dr Atl 2084,Zona Rio,Tijuana,Baja California,22010,(619) 971-2297,32.524827,-117.014099,Composite Filling,50,https://www.tccdentistry.com/,Mock Data
+Tijuana Clinic for Cosmetic Dentistry,TJ Clinic,Dr Atl 2084,Zona Rio,Tijuana,Baja California,22010,(619) 971-2297,32.524827,-117.014099,Extraction,80,https://www.tccdentistry.com/,Mock Data
+Tijuana Clinic for Cosmetic Dentistry,TJ Clinic,Dr Atl 2084,Zona Rio,Tijuana,Baja California,22010,(619) 971-2297,32.524827,-117.014099,Root Canal,300,https://www.tccdentistry.com/,Mock Data
+Tijuana Clinic for Cosmetic Dentistry,TJ Clinic,Dr Atl 2084,Zona Rio,Tijuana,Baja California,22010,(619) 971-2297,32.524827,-117.014099,Porcelain Crown,350,https://www.tccdentistry.com/,Mock Data
+Odontologia Integral de Mexico,Odontologia,Josefa Ortiz de Dominguez 1310,Zona Rio,Tijuana,Baja California,22010,6646829464,32.522908,-117.045351,Adult Cleaning,45,http://www.bajadentistry.com/,Mock Data
+Odontologia Integral de Mexico,Odontologia,Josefa Ortiz de Dominguez 1310,Zona Rio,Tijuana,Baja California,22010,6646829464,32.522908,-117.045351,Composite Filling,45,http://www.bajadentistry.com/,Mock Data
+Odontologia Integral de Mexico,Odontologia,Josefa Ortiz de Dominguez 1310,Zona Rio,Tijuana,Baja California,22010,6646829464,32.522908,-117.045351,Extraction,75,http://www.bajadentistry.com/,Mock Data
+Odontologia Integral de Mexico,Odontologia,Josefa Ortiz de Dominguez 1310,Zona Rio,Tijuana,Baja California,22010,6646829464,32.522908,-117.045351,Root Canal,275,http://www.bajadentistry.com/,Mock Data
+Odontologia Integral de Mexico,Odontologia,Josefa Ortiz de Dominguez 1310,Zona Rio,Tijuana,Baja California,22010,6646829464,32.522908,-117.045351,Porcelain Crown,400,http://www.bajadentistry.com/,Mock Data
+American Bio-Dental Center,Bio-Dental,Blvd Agua Caliente 4558,La Chapu,Tijuana,Baja California,22420,(877) 207-0824,32.512397,-117.002315,Adult Cleaning,35,https://americanbiodental.com/,Actual Data
+American Bio-Dental Center,Bio-Dental,Blvd Agua Caliente 4558,La Chapu,Tijuana,Baja California,22420,(877) 207-0824,32.512397,-117.002315,Composite Filling,75,https://americanbiodental.com/,Actual Data
+American Bio-Dental Center,Bio-Dental,Blvd Agua Caliente 4558,La Chapu,Tijuana,Baja California,22420,(877) 207-0824,32.512397,-117.002315,Extraction,200,https://americanbiodental.com/,Actual Data
+American Bio-Dental Center,Bio-Dental,Blvd Agua Caliente 4558,La Chapu,Tijuana,Baja California,22420,(877) 207-0824,32.512397,-117.002315,Root Canal,0,https://americanbiodental.com/,Actual Data
+American Bio-Dental Center,Bio-Dental,Blvd Agua Caliente 4558,La Chapu,Tijuana,Baja California,22420,(877) 207-0824,32.512397,-117.002315,Porcelain Crown,550,https://americanbiodental.com/,Actual Data
