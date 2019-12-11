@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container">
+
+        <h3>Add a Dental Office</h3>
+
+        <p>Blah, blah, blah...</p>
+
+        <form class="needs-validation">
+            <div class="form-row">
+                <div class="col-12 col-lg-6">
+                    <label for="name">Dental Office Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Dental Office Name" required>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <label for="abbr">Abbreviation:</label>
+                    <input type="text" class="form-control" id="abbr" placeholder="Maximum XX characters" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-12 col-lg-6">
+                    <label for="address">Address:</label>
+                    <input type="text" class="form-control" id="address" placeholder="Street Address" required>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <label for="address2">Address 2:</label>
+                    <input type="text" class="form-control" id="address2" placeholder="Use if needed">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-12 col-lg-6">
+                    <label for="city">City:</label>
+                    <input type="text" class="form-control" id="city" placeholder="City" required>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <label for="state">State:</label>
+                    <select id="state" class="form-control">
+                        <option value="" selected>Select one:</option>
+                        <option value="ca">California</option>
+                        <option value="baja">Baja California</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-12 col-lg-6">
+                    <label for="postal_code">Postal Code:</label>
+                    <input type="text" class="form-control" id="postal_code" placeholder="Postal Code" required>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <label for="area">Metro Area:</label>
+                    <select id="area" class="form-control">
+                        <option value="" selected>Select one:</option>
+                        <option value="sd">San Diego</option>
+                        <option value="tj">Tijuana</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-12 col-lg-6">
+                    <label for="postal_code">Phone:</label>
+                    <input type="text" class="form-control" id="phone" placeholder="Phone">
+                </div>
+                <div class="col-12 col-lg-6">
+                    <label for="area">Website:</label>
+                    <input type="text" class="form-control" id="website" placeholder="Website">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-12 col-lg-6">
+                    <label for="postal_code">Latitude:</label>
+                    <input type="text" class="form-control" id="latitude" placeholder="Latitude">
+                </div>
+                <div class="col-12 col-lg-6">
+                    <label for="area">Longitude:</label>
+                    <input type="text" class="form-control" id="longitude" placeholder="Longitude">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-4 col-lg-2">
+                    <p>Average Costs:</p>
+                </div>
+                <div class="col-4 col-lg-2">
+                    <label for="cleaning">Adult Cleaning:</label>
+                    <input type="text" class="form-control" id="cleaning" placeholder="In US Dollars">
+                </div>
+                <div class="col-4 col-lg-2">
+                    <label for="filling">Composite Filling:</label>
+                    <input type="text" class="form-control" id="filling" placeholder="In US Dollars">
+                </div>
+                <div class="col-4 col-lg-2">
+                    <label for="extraction">Extraction:</label>
+                    <input type="text" class="form-control" id="extraction" placeholder="In US Dollars">
+                </div>
+                <div class="col-4 col-lg-2">
+                    <label for="root_canal">Root Canal:</label>
+                    <input type="text" class="form-control" id="root_canal" placeholder="In US Dollars">
+                </div>
+                <div class="col-4 col-lg-2">
+                    <label for="crown">Porcelain Crown:</label>
+                    <input type="text" class="form-control" id="crown" placeholder="In US Dollars">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        Mock Data
+                    </label>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
+
+    </div>
+
+{% endblock %}
