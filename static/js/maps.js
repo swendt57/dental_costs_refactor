@@ -1,10 +1,7 @@
 
 $(document).ready
 {
-
-    //TODO move this to external file
-    const apiKey = "AIzaSyD9Hxr-55XV9DtkcRQqR7bPtFMX8EM5kqI";
-    const mapSrc = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
+    const mapSrc = `https://maps.googleapis.com/maps/api/js?key=${googleApiKey}&callback=initMap`;
 
     $.getScript(mapSrc, function () {
         console.log("map api loaded");

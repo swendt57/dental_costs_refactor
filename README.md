@@ -5,6 +5,7 @@
   * Berk Özbalcı - https://stackoverflow.com/questions/50867685/call-a-functions-with-the-same-name-from-different-file 
 * https://flask.palletsprojects.com/ for favicon information
 * https://css-tricks.com
+* https://flask.palletsprojects.com/en/1.1.x/patterns/wtforms/
 
 
 #### Original Acknowledgements
