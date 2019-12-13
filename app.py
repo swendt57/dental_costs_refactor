@@ -8,7 +8,7 @@ from data import *
 from utils.middleware import PrefixMiddleware
 
 app = Flask(__name__)
-app.wsgi_app = PrefixMiddleware(app.wsgi_app, prefix='dental-costs.herokuapp')
+# app.wsgi_app = PrefixMiddleware(app.wsgi_app, prefix='dental-costs.herokuapp')
 
 # mongodb+srv://root:<password>@myfirstcluster-rltec.mongodb.net/test?retryWrites=true&w=majority
 
