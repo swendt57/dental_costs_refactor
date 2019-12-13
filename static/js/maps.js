@@ -23,7 +23,7 @@ $(document).ready
 
         //putting the init code in here so I can use the main combined_flat.json file
 
-        readTextFile('/dental_costs/static/data/combined_flat.json', function (text) {
+        readTextFile('/static/data/combined_flat.json', function (text) {
             let allData = JSON.parse(text);
 
             let cityData = sortDataByCity(allData);

@@ -1,7 +1,7 @@
 let windowWidth = $(window).width();
 
 queue()
-    .defer(d3.json, "/dental_costs/static/data/combined_flat.json")
+    .defer(d3.json, "/static/data/combined_flat.json")
     .await(function makeGraphs(error, allData) {
 
     if(windowWidth <= 400) {
