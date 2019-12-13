@@ -106,6 +106,12 @@ p {
     color: honeydew;
 }
 
+/* BS OR */
+/*.navbar-expand-lg .navbar-nav .nav-link {*/
+/*    padding-right: .25rem;*/
+/*    padding-left: .25rem;*/
+/*}*/
+
 .nav-text {
     font-size: 16px;
 }
@@ -125,8 +131,9 @@ a.navbar-brand {
     color: black;
 }
 
+/* BS OR */
 a.nav-link {
-    margin-right: 4px;;
+    /*margin-right: 4px;*/
     color: honeydew;
 }
 

@@ -7,8 +7,10 @@
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/style.css">
 
-    <style> {{ page }} {
-        color: #fbe22e;
+    <style> {{ page }}
+    {
+        color: #fbe22e
+    ;
     } </style>
 
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -58,6 +60,22 @@
                         <a class="nav-link" href="maps"><span class="maps"><span
                                 class="nav-text">Location Maps</span></span></a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tips"><span class="tips"><span
+                                class="nav-text">Tips & Tricks</span></span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="admin">Admin</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Dentist list</a>
+                            <a class="dropdown-item" href="add-dentist">Add a Dentist</a>
+{#                            <div class="dropdown-divider"></div>#}
+                            <a class="dropdown-item" href="edit-dentist">Edit a Dentist</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -66,8 +84,8 @@
 </header>
 
 <section>
-<p></p>
-{% block content %} {% endblock %}
+    <p></p>
+    {% block content %} {% endblock %}
 
 </section>
 

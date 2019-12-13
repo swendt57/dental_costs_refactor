@@ -1,12 +1,13 @@
 #### Acknowledgements
 
-* Thanks to the following people for their **clear** answers on www.stackoverflow.com:
-  * su27 - https://stackoverflow.com/questions/18967441/add-a-prefix-to-all-flask-routes/
-  * Berk Özbalcı - https://stackoverflow.com/questions/50867685/call-a-functions-with-the-same-name-from-different-file 
+* Thanks to the following people for their **clear** answers on stackoverflow.com:
+  * su27 - https://stackoverflow.com/questions/18967441
+  * Berk Özbalcı - https://stackoverflow.com/questions/50867685
 * https://flask.palletsprojects.com/ for favicon information
 * https://css-tricks.com
 * https://flask.palletsprojects.com/en/1.1.x/patterns/wtforms/
-
+* Thanks to the following people on stackexchange.com:
+  * Micahel Thomas - https://craftcms.stackexchange.com/questions/8593
 
 #### Original Acknowledgements
 

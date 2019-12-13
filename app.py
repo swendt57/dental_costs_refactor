@@ -54,10 +54,22 @@ def maps():
 def add_dentist():
     return render_template('add-dentist.html', title='Add a Dentist', page='.add_dentist')
 
+
 @app.route('/insert-dentist', methods=['POST'])
 def insert_dentist():
     dentist.insert_one(mongo, request)
     return redirect(url_for('add_dentist'))
+
+
+@app.route('/edit-dentist')
+def edit_dentist():
+    return render_template('edit-dentist.html', title='Edit a Dentist', page='.edit_dentist')
+
+
+@app.route('/update-dentist', methods=['POST'])
+def update_dentist():
+    # TODO dentist.insert_one(mongo, request)
+    return redirect(url_for('dentist_list'))
 
 
 # using 'environ.get' caused problems, using 'getenv' instead
