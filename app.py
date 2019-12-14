@@ -49,10 +49,15 @@ def cost_comparisons():
 def maps():
     return render_template('maps.html', title='Location Maps', page='.maps')
 
+@app.route('/get-dentists')
+def get_categories():
+    dentists = dentist.retrieve_all(mongo)
+    return render_template('dentists.html', title='Dental Offices', page='.admin', dentists=dentists)
+
 
 @app.route('/add-dentist')
 def add_dentist():
-    return render_template('add-dentist.html', title='Add a Dentist', page='.add_dentist')
+    return render_template('add-dentist.html', title='Add a Dentist', page='.admin')
 
 
 @app.route('/insert-dentist', methods=['POST'])
@@ -63,13 +68,18 @@ def insert_dentist():
 
 @app.route('/edit-dentist')
 def edit_dentist():
-    return render_template('edit-dentist.html', title='Edit a Dentist', page='.edit_dentist')
+    return render_template('edit-dentist.html', title='Edit a Dentist', page='.admin')
 
 
 @app.route('/update-dentist', methods=['POST'])
 def update_dentist():
     # TODO dentist.insert_one(mongo, request)
     return redirect(url_for('dentist_list'))
+
+
+@app.route('/user-info')
+def user_info():
+    return render_template('user-info.html', title='Helpful Hints', page='.admin')
 
 
 # using 'environ.get' caused problems, using 'getenv' instead

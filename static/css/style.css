@@ -88,7 +88,8 @@ p {
 
 .title,
 .sub-title,
-.nav-text {
+.nav-text
+{
     font-family: "Lato", sans-serif;
     font-weight: 700;
     font-style: italic;
@@ -150,6 +151,20 @@ a.nav-link:hover {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='honeydew' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
+/* BS OR */
+.dropdown-menu {
+    text-align: right;
+    background-image: linear-gradient(#0097ac, #007E8C);
+}
+
+/* BS OR */
+a.dropdown-item {
+    color: honeydew;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
 /* styles for tablet */
 @media (min-width: 768px) {
     #header-bg {
@@ -187,6 +202,18 @@ a.nav-link:hover {
 
     .nav-text {
         font-size: 18px;
+    }
+
+    /* BS OR */
+    .dropdown-menu {
+        min-width: 0;
+        width: 125px;
+        text-align: left;
+    }
+
+    /* BS OR */
+    .dropdown-item {
+        padding: .25rem .5rem;
     }
 }
 

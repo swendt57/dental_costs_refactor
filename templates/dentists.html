@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container">
+
+        <h3>Dental Offices</h3>
+
+        <p>Blah, blah, blah...</p>
+
+        <ul>
+        {% for dentist in dentists %}
+            <li><strong>{{ dentist.name }}</strong> - {{ dentist._id }}</li>
+        {% endfor %}
+        </ul>
+
+    </div>
+
+{% endblock %}
