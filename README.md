@@ -1,8 +1,9 @@
 #### Acknowledgements
 
-* Thanks to the following people for their **clear** answers on stackoverflow.com:
+* Thanks to the following people for their **clear and concise** answers on stackoverflow.com:
   * su27 - https://stackoverflow.com/questions/18967441
   * Berk Özbalcı - https://stackoverflow.com/questions/50867685
+  * Agush - https://stackoverflow.com/questions/14304494
 * https://flask.palletsprojects.com/ for favicon information
 * https://css-tricks.com
 * https://flask.palletsprojects.com/en/1.1.x/patterns/wtforms/

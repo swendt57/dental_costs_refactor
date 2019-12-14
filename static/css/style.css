@@ -207,7 +207,7 @@ a.dropdown-item {
     /* BS OR */
     .dropdown-menu {
         min-width: 0;
-        width: 125px;
+        width: 100px;
         text-align: left;
     }
 
@@ -224,6 +224,40 @@ span i {
     vertical-align: text-top;
     float: left;
     padding: 10px 10px 5px 0;
+}
+
+#sd-tj {
+    float: right;
+    margin: 4px;
+    text-align: center;
+    font-size: 12px;
+    width: 200px;
+}
+
+/* BS OR */
+.figure-img {
+    margin: 0;
+    max-width: 90%;
+}
+
+/*figure img {*/
+/*    border: 1px solid black;*/
+/*    width: 150px;*/
+/*    !*width: 70%;*!*/
+/*}*/
+
+/* styles for tablet */
+@media (min-width: 768px) {
+    #sd-tj {
+        width: 225px;
+    }
+}
+
+/* styles for desktop */
+@media (min-width: 992px) {
+    #sd-tj {
+        width: 250px;
+    }
 }
 
 /* --------------------Top 10 Styles-------------------- */
