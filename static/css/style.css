@@ -17,6 +17,11 @@ body {
     background-color: rgba(255,250,240,.2);
 }
 
+/* BS OR */
+.container {
+    padding: 0;
+}
+
 section {
     padding-top: 95px;
     margin: 0 20px;
@@ -106,12 +111,6 @@ p {
     padding-top: -10px;
     color: honeydew;
 }
-
-/* BS OR */
-/*.navbar-expand-lg .navbar-nav .nav-link {*/
-/*    padding-right: .25rem;*/
-/*    padding-left: .25rem;*/
-/*}*/
 
 .nav-text {
     font-size: 16px;
@@ -239,12 +238,6 @@ span i {
     margin: 0;
     max-width: 90%;
 }
-
-/*figure img {*/
-/*    border: 1px solid black;*/
-/*    width: 150px;*/
-/*    !*width: 70%;*!*/
-/*}*/
 
 /* styles for tablet */
 @media (min-width: 768px) {
@@ -470,6 +463,7 @@ text.legend {
 #scatter-chart-container {
     width: 600px;
     margin: 20px auto;
+    /*overflow: auto;*/
 }
 
 #scatter-chart-container svg {

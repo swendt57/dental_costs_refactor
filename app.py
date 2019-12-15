@@ -42,7 +42,7 @@ def top_ten():
 
 @app.route('/cost-comparisons')
 def cost_comparisons():
-    return render_template('cost-comparisons.html', title='Dental Cost Comparisons', page='.comparisons')
+    return render_template('cost-comparisons.html', title='Dental Cost Comparisons', page='.comparisons', body='cost')
 
 
 @app.route('/maps')

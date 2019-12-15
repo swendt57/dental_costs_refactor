@@ -205,9 +205,9 @@ queue()
 
     //SCATTER CHART********************************************************************************
 
-    width = 600;
+    width = 575;
     height = 600;
-
+    //doubble check this!!!!!!!
     if(windowWidth >= 768) {
         width = 650;
         height = 650;

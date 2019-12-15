@@ -15,18 +15,19 @@
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/style.css">
 
-    <style> {{ page }}
-    {
-        color: #fbe22e
-    ;
-    } </style>
+    <style>
+    {{ page }}
+        {
+            color: #fbe22e;
+        }
+    </style>
 
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
     <title>{{ title }}</title>
 
 </head>
-<body>
+<body id="{{ body }}">
 
 <header>
     <div id="header-bg"></div>
