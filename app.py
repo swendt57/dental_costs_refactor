@@ -7,7 +7,6 @@ from data import dentist_dao
 # from data.user import *
 from utils.middleware import PrefixMiddleware
 
-
 app = Flask(__name__)
 # app.wsgi_app = PrefixMiddleware(app.wsgi_app, prefix='dental-costs.herokuapp')
 
@@ -55,8 +54,13 @@ def maps():
 
 @app.route('/get-dentists')
 def get_dentists():
-    dentists = dentist_dao.retrieve_all(mongo)
-    return render_template('dentists.html', title='Dental Offices', page='.admin', dentists=dentists)
+    sd_filter = {'area': 'sd'}
+    tj_filter = {'area': 'tj'}
+    sd_dentists = dentist_dao.retrieve_all_with_filter(mongo, sd_filter)
+    tj_dentists = dentist_dao.retrieve_all_with_filter(mongo, tj_filter)
+    # dentists = dentist_dao.retrieve_all(mongo)
+    return render_template('dentists.html', title='Dental Offices', page='.admin',
+                           sd_dentists=sd_dentists, tj_dentists=tj_dentists)
 
 
 @app.route('/add-dentist')
@@ -93,4 +97,3 @@ if __name__ == '__main__':
     app.run(host=os.getenv('IP', '127.0.0.1'),
             port=os.getenv('PORT', '5000'),
             debug=True)
-

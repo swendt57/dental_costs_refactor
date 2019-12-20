@@ -20,12 +20,18 @@ def assemble_dentist_dict(request):
         'extraction': int(request.form.get('extraction')),
         'root_canal': int(request.form.get('root_canal')),
         'crown': int(request.form.get('crown')),
-        'mock_data': bool(request.form.get('mock_data'))
+        'mock_data': bool(request.form.get('mock_data')),
+        'is_active': bool(request.form.get('is_active'))
     }
 
 
 def retrieve_all(conn):
     dentists = conn.db.dentists.find()
+    return dentists
+
+
+def retrieve_all_with_filter(conn, filter):
+    dentists = conn.db.dentists.find(filter)
     return dentists
 
 

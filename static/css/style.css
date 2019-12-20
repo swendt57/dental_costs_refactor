@@ -24,7 +24,7 @@ body {
 
 section {
     padding-top: 95px;
-    margin: 0 20px;
+    margin: auto;
 }
 
 h3 {
@@ -217,7 +217,12 @@ a.dropdown-item {
 }
 
 /* --------------------Home Styles-------------------- */
+#home-container {
+    width: 90%;
+    margin: auto;
+}
 
+/* tooth graphic */
 span i {
     color: #0097ac;
     vertical-align: text-top;
@@ -254,6 +259,11 @@ span i {
 }
 
 /* --------------------Top 10 Styles-------------------- */
+#top-ten-container {
+    width: 90%;
+    margin: auto;
+}
+
 .plainList {
     list-style-type: none;
     font-size: .85rem;
@@ -388,7 +398,6 @@ div>h4 {
 }
 
 /* --------------------Comparisons-------------------- */
-
 .chart-intro {
     max-width: 800px;
     margin: 25px auto;
@@ -529,6 +538,10 @@ p.chart-label {
 
 
 /* --------------------Maps-------------------- */
+#map-container {
+    width: 90%;
+    margin: auto;
+}
 
 #sdMap {
     min-height: 400px; /* MUST have this in order for map to display! */
@@ -646,6 +659,31 @@ footer {
     footer {
         font-size: 14px;
     }
+}
+
+/* --------------------Admin Pages-------------------- */
+.admin-container {
+    width: 90%;
+    margin: auto;
+}
+
+.dentist-table {
+    width: 100%;
+}
+
+/* styles for landscape phone and above */
+@media (min-width: 640px) {
+   /*.dentist-table {*/
+   /*     width: 100%;*/
+   /* }*/
+}
+
+/* styles for desktop */
+@media (min-width: 992px) {
+    /*.admin-container {*/
+    /*    width: 320px;*/
+    /*    margin: auto;*/
+    /*}*/
 }
 
 

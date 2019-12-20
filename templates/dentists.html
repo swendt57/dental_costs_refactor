@@ -1,17 +1,67 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="container">
+    <div class="container admin-container">
 
         <h3>Dental Offices</h3>
 
-        <p>Blah, blah, blah...</p>
+        <p>Click the dental office name to edit values</p>
 
-        <ul>
-        {% for dentist in dentists %}
-            <li><strong>{{ dentist.name }}</strong> - <a href="{{ url_for('edit_dentist', dentist_id=dentist._id) }}">Edit Dentist</a></li>
-        {% endfor %}
-        </ul>
+        <h4>San Diego</h4>
+        <table class="table dentist-table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th class="d-none d-sm-table-cell">State</th>
+                <th class="d-none d-sm-table-cell">Postal Code</th>
+                <th>Active</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for dentist in sd_dentists %}
+                <tr>
+                    <td>
+                        <a href="{{ url_for('edit_dentist', dentist_id=dentist._id) }}"><strong>{{ dentist.name }}</strong></a>
+                    </td>
+                    <td>{{ dentist.address }}</td>
+                    <td>{{ dentist.city }}</td>
+                    <td class="d-none d-sm-table-cell">{{ dentist.state }}</td>
+                    <td class="d-none d-sm-table-cell">{{ dentist.postal_code }}</td>
+                    <td>{{ dentist.is_active }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <h4>Tijuana</h4>
+        <table class="table dentist-table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th class="d-none d-sm-table-cell">State</th>
+                <th class="d-none d-sm-table-cell">Postal Code</th>
+                <th>Active</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for dentist in tj_dentists %}
+                <tr>
+                    <td>
+                        <a href="{{ url_for('edit_dentist', dentist_id=dentist._id) }}"><strong>{{ dentist.name }}</strong></a>
+                    </td>
+                    <td>{{ dentist.address }}</td>
+                    <td>{{ dentist.city }}</td>
+                    <td class="d-none d-sm-table-cell">{{ dentist.state }}</td>
+                    <td class="d-none d-sm-table-cell">{{ dentist.postal_code }}</td>
+                    <td>{{ dentist.is_active }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
     </div>
 
