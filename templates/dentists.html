@@ -9,7 +9,7 @@
 
         <ul>
         {% for dentist in dentists %}
-            <li><strong>{{ dentist.name }}</strong> - {{ dentist._id }}</li>
+            <li><strong>{{ dentist.name }}</strong> - <a href="{{ url_for('edit_dentist', dentist_id=dentist._id) }}">Edit Dentist</a></li>
         {% endfor %}
         </ul>
 

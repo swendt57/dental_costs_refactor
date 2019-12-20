@@ -13,7 +13,7 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
     <style>
     {{ page }}
@@ -55,22 +55,22 @@
 
                 <ul class="nav navbar-nav text-right">
                     <li class="nav-item">
-                        <a class="nav-link" href="index"><span class="home"><span
+                        <a class="nav-link" href="{{ url_for('home') }}"><span class="home"><span
                                 class="nav-text">Home</span></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="top-ten-affordable"><span class="top-ten"><span class="nav-text">Top 10 Affordable</span></span></a>
+                        <a class="nav-link" href="{{ url_for('top_ten') }}"><span class="top-ten"><span class="nav-text">Top 10 Affordable</span></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cost-comparisons"><span class="comparisons"><span
+                        <a class="nav-link" href="{{ url_for('cost_comparisons') }}"><span class="comparisons"><span
                                 class="nav-text">Cost Comparisons</span></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="maps"><span class="maps"><span
+                        <a class="nav-link" href="{{ url_for('maps') }}"><span class="maps"><span
                                 class="nav-text">Location Maps</span></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="user-info"><span class="tips"><span
+                        <a class="nav-link" href="{{ url_for('user_info') }}"><span class="tips"><span
                                 class="nav-text">Helpful Hints</span></span></a>
                     </li>
                     <li class="nav-item dropdown">
@@ -79,10 +79,10 @@
                             <span class="admin">Admin</span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="get-dentists">Dentist List</a>
-                            <a class="dropdown-item" href="add-dentist">Add Dentist</a>
-{#                            <div class="dropdown-divider"></div>#}
-                            <a class="dropdown-item" href="edit-dentist">Edit Dentist</a>
+                            <a class="dropdown-item" href="{{ url_for('get_dentists') }}">Dentist List</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ url_for('add_dentist') }}">Add Dentist</a>
+{#                            <a class="dropdown-item" href="{{ url_for('edit_dentist/<dentist_id>') }}">Edit Dentist</a>#}
                         </div>
                     </li>
                 </ul>

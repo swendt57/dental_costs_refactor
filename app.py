@@ -3,9 +3,10 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 
-from data import *
+from data import dentist_dao
 # from data.user import *
 from utils.middleware import PrefixMiddleware
+
 
 app = Flask(__name__)
 # app.wsgi_app = PrefixMiddleware(app.wsgi_app, prefix='dental-costs.herokuapp')
@@ -34,7 +35,7 @@ def home():
 
 @app.route('/top-ten-affordable')
 def top_ten():
-    dentists = dentist.retrieve_all(mongo)
+    dentists = dentist_dao.retrieve_all(mongo)  # not yet used...
     return render_template('top-ten-affordable.html',
                            title='Top 10 Affordable Dentists',
                            page='.top-ten')
@@ -42,16 +43,19 @@ def top_ten():
 
 @app.route('/cost-comparisons')
 def cost_comparisons():
+    dentists = dentist_dao.retrieve_all(mongo)  # not yet used...
     return render_template('cost-comparisons.html', title='Dental Cost Comparisons', page='.comparisons', body='cost')
 
 
 @app.route('/maps')
 def maps():
+    dentists = dentist_dao.retrieve_all(mongo)  # not yet used...
     return render_template('maps.html', title='Location Maps', page='.maps')
 
+
 @app.route('/get-dentists')
-def get_categories():
-    dentists = dentist.retrieve_all(mongo)
+def get_dentists():
+    dentists = dentist_dao.retrieve_all(mongo)
     return render_template('dentists.html', title='Dental Offices', page='.admin', dentists=dentists)
 
 
@@ -62,19 +66,21 @@ def add_dentist():
 
 @app.route('/insert-dentist', methods=['POST'])
 def insert_dentist():
-    dentist.insert_one(mongo, request)
-    return redirect(url_for('add_dentist'))
+    dentist_dao.insert_one(mongo, request)
+    return redirect(url_for('get_dentists'))
 
 
-@app.route('/edit-dentist')
-def edit_dentist():
-    return render_template('edit-dentist.html', title='Edit a Dentist', page='.admin')
+@app.route('/edit-dentist/<dentist_id>')
+def edit_dentist(dentist_id):
+    dentist = dentist_dao.retrieve_one(mongo, dentist_id)
+    print(dentist)
+    return render_template('edit-dentist.html', dentist=dentist, title='Edit a Dentist', page='.admin')
 
 
-@app.route('/update-dentist', methods=['POST'])
-def update_dentist():
-    # TODO dentist.insert_one(mongo, request)
-    return redirect(url_for('dentist_list'))
+@app.route('/update-dentist/<dentist_id>', methods=['POST'])
+def update_dentist(dentist_id):
+    dentist_dao.update(mongo, request, dentist_id)
+    return redirect(url_for('get_dentists'))
 
 
 @app.route('/user-info')
@@ -87,3 +93,4 @@ if __name__ == '__main__':
     app.run(host=os.getenv('IP', '127.0.0.1'),
             port=os.getenv('PORT', '5000'),
             debug=True)
+

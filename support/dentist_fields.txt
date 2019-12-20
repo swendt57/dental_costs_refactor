@@ -1,0 +1,37 @@
+name
+abbr
+address
+address2 
+city
+state
+postal_code
+area
+phone
+website
+latitude
+longitude
+cleaning
+filling
+extraction
+root_canal
+crown
+mock_data
+
+'name': request.form.get('name'),
+'abbr': request.form.get('abbr'),
+'address': request.form.get('address'),
+'address2': request.form.get('address2'),
+'city: request.form.get('city'),
+'state': request.form.get('state'),
+'postal_code': request.form.get('postal_code'),
+'area': request.form.get('area'),
+'phone': request.form.get('phone'),
+'website': request.form.get('website'),
+'latitude': request.form.get('latitude'),
+'longitude': request.form.get('longitude),
+'cleaning': request.form.get('cleaning'),
+'filling': request.form.get('filling'),
+'extraction': request.form.get('extraction'),
+'root_canal': request.form.get('root_canal'),
+'crown': request.form.get('crowm'),
+'mock_data': request.form.get('mock_data')

@@ -2,69 +2,69 @@
 <div class="form-row">
     <div class="col-12 col-lg-6">
         <label for="name">Dental Office Name*</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Dental Office Name" required>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Dental Office Name" value="{% if dentist %}{{ dentist.name }}{% endif %}" required>
     </div>
     <div class="col-12 col-lg-6">
         <label for="abbr">Abbreviation*</label>
-        <input type="text" class="form-control" id="abbr" name="abbr" placeholder="Maximum XX characters" required>
+        <input type="text" class="form-control" id="abbr" name="abbr" placeholder="Maximum XX characters" value="{% if dentist %}{{ dentist.abbr }}{% endif %}" required>
     </div>
 </div>
 <div class="form-row">
     <div class="col-12 col-lg-6">
         <label for="address">Address*</label>
-        <input type="text" class="form-control" id="address" name="address" placeholder="Street Address" required>
+        <input type="text" class="form-control" id="address" name="address" placeholder="Street Address" value="{% if dentist %}{{ dentist.address }}{% endif %}" required>
     </div>
     <div class="col-12 col-lg-6">
         <label for="address2">Address 2</label>
-        <input type="text" class="form-control" id="address2" name="address2" placeholder="Use if needed">
+        <input type="text" class="form-control" id="address2" name="address2" placeholder="Use if needed" value="{% if dentist %}{{ dentist.address2 }}{% endif %}">
     </div>
 </div>
 <div class="form-row">
     <div class="col-12 col-lg-6">
         <label for="city">City*</label>
-        <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
+        <input type="text" class="form-control" id="city" name="city" placeholder="City" value="{% if dentist %}{{ dentist.city }}{% endif %}" required>
     </div>
     <div class="col-12 col-lg-6">
         <label for="state">State*</label>
         <select id="state" name="state" class="form-control" required>
             <option value="" selected>Select one</option>
-            <option value="ca">California</option>
-            <option value="baja">Baja California</option>
+            <option value="ca" {% if dentist and dentist.state == 'ca' %}selected{% endif %}>California</option>
+            <option value="baja" {% if dentist and dentist.state == 'baja' %}selected{% endif %}>Baja California</option>
         </select>
     </div>
 </div>
 <div class="form-row">
     <div class="col-12 col-lg-6">
         <label for="postal_code">Postal Code</label>
-        <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="Postal Code">
+        <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="Postal Code" value="{% if dentist %}{{ dentist.postal_code }}{% endif %}">
     </div>
     <div class="col-12 col-lg-6">
         <label for="area">Metro Area*</label>
         <select id="area" name="area" class="form-control" required>
             <option value="" selected>Select one</option>
-            <option value="sd">San Diego</option>
-            <option value="tj">Tijuana</option>
+            <option value="sd" {% if dentist and dentist.area == 'sd' %}selected{% endif %}>San Diego</option>
+            <option value="tj" {% if dentist and dentist.area == 'tj' %}selected{% endif %}>Tijuana</option>
         </select>
     </div>
 </div>
 <div class="form-row">
     <div class="col-12 col-lg-6">
-        <label for="postal_code">Phone</label>
-        <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone">
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" value="{% if dentist %}{{ dentist.phone }}{% endif %}">
     </div>
     <div class="col-12 col-lg-6">
-        <label for="area">Website</label>
-        <input type="text" class="form-control" id="website" name="website" placeholder="Website">
+        <label for="website">Website</label>
+        <input type="text" class="form-control" id="website" name="website" placeholder="Website" value="{% if dentist %}{{ dentist.website }}{% endif %}">
     </div>
 </div>
 <div class="form-row">
     <div class="col-12 col-lg-6">
-        <label for="postal_code">Latitude*</label>
-        <input type="text" class="form-control" id="latitude" name="latitude" placeholder="Latitude" required>
+        <label for="latitude">Latitude*</label>
+        <input type="text" class="form-control" id="latitude" name="latitude" placeholder="Latitude" value="{% if dentist %}{{ dentist.latitude }}{% endif %}" required>
     </div>
     <div class="col-12 col-lg-6">
-        <label for="area">Longitude*</label>
-        <input type="text" class="form-control" id="longitude" name="longitude" placeholder="Longitude" required>
+        <label for="longitude">Longitude*</label>
+        <input type="text" class="form-control" id="longitude" name="longitude" placeholder="Longitude" value="{% if dentist %}{{ dentist.longitude }}{% endif %}" required>
     </div>
 </div>
 <div class="form-row">
@@ -73,29 +73,36 @@
     </div>
     <div class="col-4 col-lg-2">
         <label for="cleaning">Adult Cleaning</label>
-        <input type="number" class="form-control" id="cleaning" name="cleaning" placeholder="$$" required>
+        <input type="number" class="form-control" id="cleaning" name="cleaning" placeholder="$$" value="{% if dentist %}{{ dentist.cleaning }}{% endif %}" required>
     </div>
     <div class="col-4 col-lg-2">
         <label for="filling">Composite Filling</label>
-        <input type="number" class="form-control" id="filling" name="filling" placeholder="$$" required>
+        <input type="number" class="form-control" id="filling" name="filling" placeholder="$$" value="{% if dentist %}{{ dentist.filling }}{% endif %}" required>
     </div>
     <div class="col-4 col-lg-2">
         <label for="extraction">Extraction</label>
-        <input type="number" class="form-control" id="extraction" name="extraction" placeholder="$$" required>
+        <input type="number" class="form-control" id="extraction" name="extraction" placeholder="$$" value="{% if dentist %}{{ dentist.extraction }}{% endif %}" required>
     </div>
     <div class="col-4 col-lg-2">
         <label for="root_canal">Root Canal</label>
-        <input type="number" class="form-control" id="root_canal" name="root_canal" placeholder="$$" required>
+        <input type="number" class="form-control" id="root_canal" name="root_canal" placeholder="$$" value="{% if dentist %}{{ dentist.root_canal }}{% endif %}" required>
     </div>
     <div class="col-4 col-lg-2">
         <label for="crown">Porcelain Crown</label>
-        <input type="number" class="form-control" id="crown" name="crown" placeholder="$$" required>
+        <input type="number" class="form-control" id="crown" name="crown" placeholder="$$"  value="{% if dentist %}{{ dentist.crown }}{% endif %}" required>
     </div>
 </div>
 
 <div class="form-group">
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="true" id="mock_data" name="mock_data">
+{#        <input class="form-check-input" type="checkbox" value="true" id="mock_data" name="mock_data">#}
+
+        {% if dentist and dentist.mock_data %}
+            <input class="form-check-input" id="mock_data" name="mock_data" type="checkbox" checked>
+        {% else %}
+            <input class="form-check-input" id="mock_data" name="mock_data" type="checkbox">
+        {% endif %}
+
         <label class="form-check-label" for="mock_data">
             Mock Data
         </label>
