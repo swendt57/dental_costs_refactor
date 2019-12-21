@@ -1,0 +1,35 @@
+<div class="form-row">
+    <div class="col-6 col-lg-4">
+        <label for="first_name">First Name*</label>
+        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name"
+               value="{% if user %}{{ user.first_name }}{% endif %}" required>
+    </div>
+</div>
+<div class="form-row">
+    <div class="col-6 col-lg-4">
+        <label for="last_name">Last Name*</label>
+        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name"
+               value="{% if user %}{{ user.username }}{% endif %}" required>
+    </div>
+</div>
+<div class="form-row">
+    <div class="col-6 col-lg-4">
+        <label for="username">Userame*</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Username"
+               value="{% if user %}{{ user.first_name }}{% endif %}" required>
+    </div>
+</div>
+<div class="form-row">
+    <div class="col-6 col-lg-4">
+        <label for="password">Password (not required at this time)</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+               value="{% if user %}{{ user.password }}{% endif %}" disabled>
+    </div>
+</div>
+<div class="form-row">
+    <div class="col-6 col-lg-4">
+        <label for="password2">Confirm Password (not required at this time)</label>
+        <input type="text" class="form-control" id="password2" name="password2" placeholder="Confirm Password"
+               value="{% if user %}{{ user.password2 }}{% endif %}" disabled>
+    </div>
+</div>

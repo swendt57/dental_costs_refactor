@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="container">
+    <div class="container admin-container">
 
         <h3>Edit a Dental Office</h3>
 
-        <p>Blah, blah, blah...</p>
+        <p>Asterisks (*) indicate required fields</p>
 
         <form action="{{ url_for('update_dentist', dentist_id=dentist._id) }}" method="POST">
             {% include 'dentist-form-content.html' %}

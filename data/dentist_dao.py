@@ -30,8 +30,8 @@ def retrieve_all(conn):
     return dentists
 
 
-def retrieve_all_with_filter(conn, filter):
-    dentists = conn.db.dentists.find(filter)
+def retrieve_all_with_filter(conn, dentist_filter):
+    dentists = conn.db.dentists.find(dentist_filter)
     return dentists
 
 

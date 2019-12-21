@@ -79,10 +79,11 @@
                             <span class="admin">Admin</span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ url_for('get_dentists') }}">Dentist List</a>
+                            <a class="dropdown-item" href="{{ url_for('get_dentists') }}">Dentist Lists</a>
+                            <a class="dropdown-item" href="{{ url_for('get_users') }}">User Lists</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ url_for('add_dentist') }}">Add Dentist</a>
-{#                            <a class="dropdown-item" href="{{ url_for('edit_dentist/<dentist_id>') }}">Edit Dentist</a>#}
+                            <a class="dropdown-item" href="{{ url_for('add_user') }}">Add User</a>
                         </div>
                     </li>
                 </ul>

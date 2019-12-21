@@ -3,7 +3,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 
-from data import dentist_dao
+from data import dentist_dao, user_dao
 # from data.user import *
 from utils.middleware import PrefixMiddleware
 
@@ -52,6 +52,9 @@ def maps():
     return render_template('maps.html', title='Location Maps', page='.maps')
 
 
+# **************DENTISTS****************************
+
+
 @app.route('/get-dentists')
 def get_dentists():
     sd_filter = {'area': 'sd'}
@@ -87,9 +90,49 @@ def update_dentist(dentist_id):
     return redirect(url_for('get_dentists'))
 
 
+# **************USERS****************************
+
+
 @app.route('/user-info')
 def user_info():
     return render_template('user-info.html', title='Helpful Hints', page='.admin')
+
+
+@app.route('/get-users')
+def get_users():
+    user_filter = {'role': 'user'}
+    admin_filter = {'role': 'admin'}
+    users = user_dao.retrieve_all_with_filter(mongo, user_filter)
+    admins = user_dao.retrieve_all_with_filter(mongo, admin_filter)
+    return render_template('users.html', title='System Users', page='.admin', users=users, admins=admins)
+
+
+@app.route('/add-user')
+def add_user():
+    return render_template('add-user.html', title='Add a User', page='.admin')
+
+
+@app.route('/insert-user', methods=['POST'])
+def insert_user():
+    user_dao.insert_one(mongo, request)
+    return redirect(url_for('get_users'))
+
+
+@app.route('/edit-user/<user_id>')
+def edit_user(user_id):
+    user = user_dao.retrieve_one(mongo, user_id)
+    return render_template('edit-user.html', user=user, title='Edit a User', page='.admin')
+
+
+@app.route('/update-user/<user_id>', methods=['POST'])
+def update_user(user_id):
+    user_dao.update(mongo, request, user_id)
+    return redirect(url_for('get_users'))
+
+
+@app.route('/get-user-comments')
+def get_user_comments():
+    return "You were successful!!"
 
 
 # using 'environ.get' caused problems, using 'getenv' instead

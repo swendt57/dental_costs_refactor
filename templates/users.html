@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container admin-container">
+
+        <h3>System Users</h3>
+
+        <p>Click the XXX name to edit values</p>
+
+        <h4>Regular Users</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>
+                        <a href="{{ url_for('edit_user', user_id=user._id) }}"><strong>{{ user.username }}</strong></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <h4>Admin Users</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in admins %}
+                <tr>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>
+                        <a href="{{ url_for('edit_user', user_id=user._id) }}"><strong>{{ user.username }}</strong></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+{% endblock %}
