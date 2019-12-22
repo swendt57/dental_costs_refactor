@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container comments-container">
+
+        <h3>User Comments</h3>
+
+{#    USE DEFINITION TAGS maybe!#}
+        <dl>
+        {% for comment in comments %}
+            <dt>{{ comment.comment }}</dt>
+{#            <p><strong>{{ comment.dentist }}</strong> - {{ comment.user.first_name }} {{ comment.user.last_name[0] }} - {{ comment.formatted_date }}</p>#}
+            <dd><strong>{{ comment.dentist }}</strong> - {{ comment.user.first_name }} {{ comment.user.last_name[0] }} - {{ comment.formatted_date }}</dd>
+        {% endfor %}
+        </dl>
+
+    </div>
+
+{% endblock %}

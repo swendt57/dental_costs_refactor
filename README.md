@@ -1,9 +1,12 @@
 #### Acknowledgements
 
-* Thanks to the following people for their **clear and concise** answers on stackoverflow.com:
+(https://placehold.it/150/f03c15/000000?text=YANKEE) 'TTT'
+
+* Thanks to the following people for their **![#f03c15]clear and concise** answers on stackoverflow.com:
   * su27 - https://stackoverflow.com/questions/18967441
   * Berk Özbalcı - https://stackoverflow.com/questions/50867685
   * Agush - https://stackoverflow.com/questions/14304494
+  * Boston Kenne - https://stackoverflow.com/questions/52491353
 * https://flask.palletsprojects.com/ for favicon information
 * https://css-tricks.com
 * https://flask.palletsprojects.com/en/1.1.x/patterns/wtforms/

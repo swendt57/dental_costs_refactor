@@ -3,27 +3,23 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 
-from data import dentist_dao, user_dao
-# from data.user import *
+from data import dentist_dao, user_dao, user_comment_dao
+
 from utils.middleware import PrefixMiddleware
 
 app = Flask(__name__)
 # app.wsgi_app = PrefixMiddleware(app.wsgi_app, prefix='dental-costs.herokuapp')
 
-# mongodb+srv://root:<password>@myfirstcluster-rltec.mongodb.net/test?retryWrites=true&w=majority
-
 db_user = os.getenv('db_user')
 db_pw = os.getenv('db_pw')
 
 app.config['googleApiKey'] = os.getenv('google_api_key')
-app.config["MONGO_DBNAME"] = 'task_manager'
+app.config["MONGO_DBNAME"] = 'dental_costs'
 app.config[
     "MONGO_URI"] = "mongodb+srv://{0}:{1}@myfirstcluster-rltec.mongodb.net/dental_costs?retryWrites=true&w=majority".format(
     db_user, db_pw)
 
 mongo = PyMongo(app)
-
-print(mongo)
 
 
 @app.route('/')
@@ -93,9 +89,9 @@ def update_dentist(dentist_id):
 # **************USERS****************************
 
 
-@app.route('/user-info')
-def user_info():
-    return render_template('user-info.html', title='Helpful Hints', page='.admin')
+# @app.route('/user-info')
+# def user_info():
+#     return render_template('user-info.html', title='Helpful Hints', page='.admin')
 
 
 @app.route('/get-users')
@@ -131,8 +127,22 @@ def update_user(user_id):
 
 
 @app.route('/get-user-comments')
-def get_user_comments():
-    return "You were successful!!"
+def get_comments():
+    comments = user_comment_dao.retrieve_all(mongo)
+    return render_template('user-comments.html', title='User Comments', page='.comments', comments=comments)
+
+
+@app.route('/add-comment')
+def add_comment():
+    all_dentists = dentist_dao.retrieve_all(mongo)
+    return render_template('add-comment.html', title='Add a Comment', page='.comments', dentists=all_dentists)
+
+
+@app.route('/insert-comment', methods=['POST'])
+def insert_comment():
+    print(request.form)
+    user_comment_dao.insert_one(mongo, request)
+    return redirect(url_for('get_comments'))
 
 
 # using 'environ.get' caused problems, using 'getenv' instead

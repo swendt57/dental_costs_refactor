@@ -70,8 +70,8 @@
                                 class="nav-text">Location Maps</span></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('user_info') }}"><span class="tips"><span
-                                class="nav-text">Helpful Hints</span></span></a>
+                        <a class="nav-link" href="{{ url_for('get_comments') }}"><span class="comments"><span
+                                class="nav-text">User Comments</span></span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdown" role="button"
@@ -84,6 +84,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ url_for('add_dentist') }}">Add Dentist</a>
                             <a class="dropdown-item" href="{{ url_for('add_user') }}">Add User</a>
+                            <a class="dropdown-item" href="{{ url_for('add_comment') }}">Add Comment</a>
                         </div>
                     </li>
                 </ul>

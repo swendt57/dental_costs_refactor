@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container admin-container">
+
+        <h3>Add a Comment</h3>
+
+        <p>Dentist should be select list</p>
+
+        <p>Asterisks (*) indicate required fields</p>
+
+        <form action="{{ url_for('insert_comment') }}" method="POST">
+            <div class="form-row">
+                <div class="col-6 col-lg-4">
+                    <label for="dentist">Dentist*</label>
+                    <select id="dentist" name="dentist" class="form-control" required>
+                        <option value="" selected>Select Dental Office:</option>
+                        {% for dentist in dentists %}
+                            <option value="{{ dentist.name }}" selected>{{ dentist.name }}</option>
+                        {% endfor %}
+                    </select>
+{#                    <input type="text" class="form-control" id="dentist" name="dentist" placeholder="Select Dentist">#}
+                    <label for="comment">Your Thoughts*</label>
+                    <textarea class="form-control" id="comment" name="comment" placeholder="Share your Thoughts"></textarea>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit Comment</button>
+        </form>
+
+    </div>
+
+{% endblock %}
