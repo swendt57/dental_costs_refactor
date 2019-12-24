@@ -5,8 +5,8 @@
         <input type="text" class="form-control" id="name" name="name" placeholder="Dental Office Name" value="{% if dentist %}{{ dentist.name }}{% endif %}" required>
     </div>
     <div class="col-12 col-lg-6">
-        <label for="abbr">Abbreviation*</label>
-        <input type="text" class="form-control" id="abbr" name="abbr" placeholder="Maximum XX characters" value="{% if dentist %}{{ dentist.abbr }}{% endif %}" required>
+        <label for="abbreviation">Abbreviation*</label>
+        <input type="text" class="form-control" id="abbreviation" name="abbreviation" placeholder="Maximum XX characters" value="{% if dentist %}{{ dentist.abbreviation }}{% endif %}" required>
     </div>
 </div>
 <div class="form-row">

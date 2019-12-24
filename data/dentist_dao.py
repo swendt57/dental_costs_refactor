@@ -4,7 +4,7 @@ from bson.objectid import ObjectId
 def assemble_dentist_dict(request):
     return {
         'name': request.form.get('name'),
-        'abbr': request.form.get('abbr'),
+        'abbreviation': request.form.get('abbreviation'),
         'address': request.form.get('address'),
         'address2': request.form.get('address2'),
         'city': request.form.get('city'),
@@ -13,8 +13,8 @@ def assemble_dentist_dict(request):
         'area': request.form.get('area'),
         'phone': request.form.get('phone'),
         'website': request.form.get('website'),
-        'latitude': request.form.get('latitude'),
-        'longitude': request.form.get('longitude'),
+        'latitude': float(request.form.get('latitude')),
+        'longitude': float(request.form.get('longitude')),
         'cleaning': int(request.form.get('cleaning')),
         'filling': int(request.form.get('filling')),
         'extraction': int(request.form.get('extraction')),
@@ -27,6 +27,7 @@ def assemble_dentist_dict(request):
 
 def retrieve_all(conn):
     dentists = conn.db.dentists.find()
+    # print(dentists)
     return dentists
 
 

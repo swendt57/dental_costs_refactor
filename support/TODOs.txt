@@ -1,0 +1,33 @@
+Comments sorted desc date
+
+Login function including storing user info
+
+DONE- create function to translate db data to JSON 
+
+DONE- add "export" button to trigger JSON update
+
+add tests back in and add new ones
+
+README file
+
+hide admin function except for admins
+
+
+
+
+IF TIME:
+
+add filter to Comments	
+
+Tips and Tricks section similar to comments
+
+add Dentist names to markers on Google maps and remove tables
+
+Redo scatter diagram
+
+add auto delete for old json files
+
+alpha order dentists once map table no longer needed
+
+
+

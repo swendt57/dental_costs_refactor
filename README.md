@@ -7,9 +7,11 @@
   * Berk Özbalcı - https://stackoverflow.com/questions/50867685
   * Agush - https://stackoverflow.com/questions/14304494
   * Boston Kenne - https://stackoverflow.com/questions/52491353
+  * dkamins - https://stackoverflow.com/questions/9170288
 * https://flask.palletsprojects.com/ for favicon information
 * https://css-tricks.com
 * https://flask.palletsprojects.com/en/1.1.x/patterns/wtforms/
+* https://datatofish.com/rename-file-python/
 * Thanks to the following people on stackexchange.com:
   * Micahel Thomas - https://craftcms.stackexchange.com/questions/8593
 

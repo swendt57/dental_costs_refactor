@@ -1,16 +1,8 @@
-import json
 import copy
 
 
- # 'static/data/combined_flat.json'
-
-
-def restructure_dental_json(path):
-    with open(path) as infile:
-        data = json.load(infile)
-
+def restructure_dental_json(data):
     for elem in data:
-        print(elem)
         if elem['area'] == 'sd':
             elem['city'] = elem['city'] = 'San Diego'
         elif elem['area'] == 'tj':
@@ -28,21 +20,15 @@ def restructure_dental_json(path):
 
         elem['fake_data'] = elem.pop('mock_data')
 
-        # if hasattr('mock_data'):
-        #     elem['fake_data'] = elem.pop('mock_data')
+    expanded_json = expand_data(data)
 
-        # data.append(elem)
-
-    # with open('static/data/test_out.json', 'w') as outfile:
-    #     json.dump(data, outfile)
+    return expanded_json
 
 
-def copy_elements(path):
-    with open(path) as infile:
-        data = json.load(infile)
-
+def expand_data(data):
     new_json = []
 
+    # create duplicate of each dentist for each procedure
     for x in range(len(data)):
         for y in range(5):
             new_json.append(copy.deepcopy(data[x]))
@@ -50,6 +36,7 @@ def copy_elements(path):
     procedures = ['Adult Cleaning', 'Composite Filling', 'Extraction', 'Root Canal', 'Porcelain Crown']
     procedure_abbr = ['cleaning', 'filling', 'extraction', 'root_canal', 'crown']
 
+    # each dentist copy has one of the five procedures with the cost
     main_index = 0
     for cycle in range(len(data)):
         proc_index = 0
@@ -62,11 +49,5 @@ def copy_elements(path):
                 proc_index = 0
             main_index = main_index + 1
 
-    f = open("static/data/final_out.json", "w")
-    f.write(json.dumps(new_json, indent=4))  # write pretty json to the file
-    f.close()
+    return new_json
 
-
-
-
-# restructure_dental_json('static/data/test_in.json')
