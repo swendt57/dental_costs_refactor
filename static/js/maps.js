@@ -50,17 +50,20 @@ $(document).ready
             let tjLocations = assembleCoordinates(cityData[1]);
 
             //this is a JS function, not a Google one
+
             let sdMarkers = sdLocations.map(function (location, i) {
                 return new google.maps.Marker({
                     position: location,
-                    label: labels[i % labels.length]
+                    label: labels[i % labels.length],
+                    title: sdLocations[i].name,
                 });
             });
 
             let tjMarkers = tjLocations.map(function (location, i) {
                 return new google.maps.Marker({
                     position: location,
-                    label: labels[i % labels.length]
+                    label: labels[i % labels.length],
+                    title: tjLocations[i].name
                 });
             });
 
@@ -71,31 +74,31 @@ $(document).ready
 
     }
 
-    function assembleCoordinates(dentists) {
-        let coordinates = [];
+}
 
-        $(dentists).each(function (i, item) {
-            coordinates.push({lat: item.latitude, lng: item.longitude});
-        });
+//Moved these functions out of jQuery block so Jasmine tests will run
 
-        return coordinates;
+function assembleCoordinates(dentists) {
+    let coordinates = [];
+
+    for (let d in dentists) {
+        coordinates.push({lat: dentists[d].latitude, lng: dentists[d].longitude, name: dentists[d].name});
     }
 
-    function sortDataByCity(allData) {
-        let sdData = [];
-        let tjData = [];
+    return coordinates;
+}
 
-        for (let i = 0; i < allData.length; i += 5) { //dentists repeat for each of five procedures - we only want one each
-            if (allData[i].city === "San Diego") {
-                sdData.push(allData[i]);
-            } else {
-                tjData.push(allData[i]);
-            }
+function sortDataByCity(allData) {
+    let sdData = [];
+    let tjData = [];
+
+    for (let i = 0; i < allData.length; i += 5) { //dentists repeat for each of five procedures - we only want one each
+        if (allData[i].city === "San Diego") {
+            sdData.push(allData[i]);
+        } else {
+            tjData.push(allData[i]);
         }
-
-        return [sdData, tjData];
     }
 
-
-
+    return [sdData, tjData];
 }

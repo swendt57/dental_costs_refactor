@@ -418,7 +418,7 @@ function sortDataByCity(allData) {
     for(let i=0; i<allData.length; i++) {
         if(allData[i].city === "San Diego") {
             sdData.push(allData[i]);
-        } else {
+        } else {``
             tjData.push(allData[i]);
         }
     }

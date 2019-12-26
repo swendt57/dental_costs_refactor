@@ -7,9 +7,9 @@ describe("maps - assembleCoordinates", function() {
         {"name": "Dental Express", "latitude": "32.753737", "longitude": "-117.223805"}
     ];
 
-    it("should return [{lat: '32.82225', lng: '-117.157913'},{lat: '32.81897', lng: '-117.183968'},{lat: '32.753737', lng: '-117.223805'}]", function() {
+    it("should return [{lat: '32.82225', lng: '-117.157913', name: 'San Diego Smile Dentistry'},{lat: '32.81897', lng: '-117.183968', name: 'Great Smile Dental'},{lat: '32.753737', lng: '-117.223805', name: ' Dental Express'}]", function() {
         let result = assembleCoordinates(dentists);
-        expect(result).toEqual([{lat: '32.82225', lng: '-117.157913'},{lat: '32.81897', lng: '-117.183968'},{lat: '32.753737', lng: '-117.223805'}]);
+        expect(result).toEqual([{lat: '32.82225', lng: '-117.157913', name: 'San Diego Smile Dentistry'},{lat: '32.81897', lng: '-117.183968', name: 'Great Smile Dental'},{lat: '32.753737', lng: '-117.223805', name: 'Dental Express'}]);
     });
 
     it("should return an array of length 3", function() {

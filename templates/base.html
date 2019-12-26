@@ -1,12 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-    {#  This tag MUST be present for the site to be responsive!!  #}
-{#    <meta name="viewport" content="width=device-width, initial-scale=1">#}
 
+    {#  The viewport tag MUST be present for the site to be responsive!!  #}
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -55,7 +54,7 @@
 
                 <ul class="nav navbar-nav text-right">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('home') }}"><span class="home"><span
+                        <a class="nav-link" href="{{ url_for('index') }}"><span class="home"><span
                                 class="nav-text">Home</span></span></a>
                     </li>
                     <li class="nav-item">
@@ -73,6 +72,7 @@
                         <a class="nav-link" href="{{ url_for('get_comments') }}"><span class="comments"><span
                                 class="nav-text">User Comments</span></span></a>
                     </li>
+                    {%  if session.username and session.profile.role == 'admin' %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -84,10 +84,11 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ url_for('add_dentist') }}">Add Dentist</a>
                             <a class="dropdown-item" href="{{ url_for('add_user') }}">Add User</a>
-                            <a class="dropdown-item" href="{{ url_for('add_comment') }}">Add Comment</a>
-                            <a class="dropdown-item" href="{{ url_for('export_dentists') }}">Export Dentists</a>
+                            <a class="dropdown-item" href="{{ url_for('add_comment') }}">Add<br/>Comment</a>
+                            <a class="dropdown-item" href="{{ url_for('export_dentists') }}">Export<br/>Dentists</a>
                         </div>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -97,14 +98,38 @@
 
 <section>
 
+    <div class="container">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <p class="flash-title"><strong>System Messages:</strong></p>
+            <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    </div>
+
     {% block content %} {% endblock %}
 
 </section>
 
 <footer>
-    <hr class="footer-hr">
-    <p class="footer-text">Map data is &copy;2019 by Google &mdash; Top 10 lists are &copy;2019 Yelp Inc.</p>
+    <div class="container">
+        <a href='{{ url_for('add_user') }}'><span class="fa-stack"><i class="fas fa-user-edit fa-stack-1x" title="Register"></i><strong class="fa-stack">Register</strong></span></a>
+        <a href='{{ url_for('login') }}'><span class="fa-stack"><i class="fas fa-sign-in-alt fa-stack-1x" title="Log in"></i><strong class="fa-stack">Log&nbsp;in</strong></span></a>
+        <a href='{{ url_for('logout') }}'><span class="fa-stack"><i class="fas fa-sign-out-alt fa-stack-1x" title="Log out"></i><strong class="fa-stack">Log&nbsp;out</strong></span></a>&nbsp;
+        <a href='{{ url_for('add_comment') }}'><span class="fa-stack"><i class="fas fa-comment fa-stack-1x" title="Add a Comment"></i><strong class="fa-stack">Comment</strong></span></a>
+    </div>
+        <hr class="footer-hr">
+        <p class="footer-text">Map data is &copy;2019 by Google &mdash; Top 10 lists are &copy;2019 Yelp Inc.</p>
+        <p class="footer-text footer-spacing">Role is:
+            {% if session.profile %}{{ session.profile.role }}{% else %} NOT LOGGED IN{% endif %}</p>
+
 </footer>
+
+{#<input type="button" class="btn footer-btn" value='Register'> <input type="button" class="btn footer-btn" value='Log in'> <input type="button" class="btn footer-btn" value='Log out'> <input type="button" class="btn footer-btn footer-comment-btn" value='Add a Comment'>#}
 
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>

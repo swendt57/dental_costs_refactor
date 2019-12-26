@@ -1,4 +1,5 @@
 from bson.objectid import ObjectId
+import pymongo
 
 
 def assemble_dentist_dict(request):
@@ -26,8 +27,7 @@ def assemble_dentist_dict(request):
 
 
 def retrieve_all(conn):
-    dentists = conn.db.dentists.find()
-    # print(dentists)
+    dentists = conn.db.dentists.find({'is_active': True}).sort([("name", pymongo.ASCENDING)])
     return dentists
 
 

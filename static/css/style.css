@@ -47,6 +47,26 @@ p {
     margin: auto 20px;
 }
 
+.flash-title {
+    margin: 0 15px;
+}
+
+.flashes {
+    color: red;
+    list-style: none;
+    margin-left: -10px;
+}
+
+/* BS OR */
+.btn {
+    font-size: 15px;
+    font-family: "Lato", sans-serif;
+    font-style: italic;
+    letter-spacing: .04rem;
+    color: honeydew;
+    background-image: linear-gradient(#0097ac, #007E8C);
+}
+
 /* styles for tablet */
 @media (min-width: 768px) {
     body {
@@ -59,6 +79,10 @@ p {
 
     h3 {
         font-size: 1.75rem;
+    }
+
+    .btn {
+        font-size: 16px;
     }
 }
 
@@ -76,6 +100,9 @@ p {
         font-size: 2rem;
     }
 
+    .btn {
+        font-size: 17px;
+    }
 }
 
 /* --------------------Header Styles-------------------- */
@@ -175,7 +202,7 @@ a.dropdown-item {
         font-size: 22px;
     }
 
-    .sub-titlw {
+    .sub-title {
         font-size: 18px;
     }
 
@@ -206,13 +233,15 @@ a.dropdown-item {
     /* BS OR */
     .dropdown-menu {
         min-width: 0;
-        width: 115px;
+        width: 110px;
         text-align: left;
+        /*margin-right: 10px;*/
     }
 
     /* BS OR */
     .dropdown-item {
         padding: .25rem .5rem;
+        margin-right: 10px;
     }
 }
 
@@ -641,10 +670,6 @@ p.chart-label {
     margin-bottom: 20px;
 }
 
-/*dt, dd {*/
-/*    */
-/*}*/
-
 dt {
     /*font-family: "Amaranth", sans-serif;*/
     font-family: "Varela", sans-serif;
@@ -661,8 +686,13 @@ dd {
     margin-left: 40px;
 }
 
-.comment {
+#comment-btn {
+    float: right;
+    padding: 0 10px;
+}
 
+#comment-head {
+    display: inline-block;
 }
 
 /* styles for tablet and above */
@@ -688,21 +718,63 @@ footer {
 }
 
 .footer-text {
-    margin: 0 auto 15px auto;
+    margin: 0 auto;
+}
+
+.footer-spacing {
+    margin-bottom: 15px;
 }
 
 .footer-hr {
     height: 2px;
     width: 40%;
     background-color: #0097ac;
-    margin: 30px auto 5px auto;
+    margin: 10px auto 5px auto;
     text-align: center;
+}
+
+/*.footer-btn {*/
+/*    padding: 0 10px;*/
+/*    margin-top: 15px;*/
+/*}*/
+
+/*.footer-comment-btn {*/
+/*    display: none;*/
+/*}*/
+
+footer i {
+    font-size: 40px;
+    /*background-color: gainsboro;*/
+    /*margin: 20px 5px;*/
+}
+
+/*.footer-icon {*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+.fa-stack {
+    /*font-size: 1rem;*/
+    color: black;
+    margin: 0 20px 30px 0px;
+    /*background-color: red;*/
+}
+
+strong.fa-stack {
+    /*padding-top: 20px;*/
+    font-size: 13px;
+    margin: 0;
+    padding: 45px 0 0 0;
+
 }
 
 /* styles for tablet and above */
 @media (min-width: 768px) {
     footer {
         font-size: 14px;
+    }
+
+    .footer-comment-btn {
+        display: inline;
     }
 }
 
@@ -715,22 +787,6 @@ footer {
 .dentist-table {
     width: 100%;
 }
-
-/* styles for landscape phone and above */
-@media (min-width: 640px) {
-   /*.dentist-table {*/
-   /*     width: 100%;*/
-   /* }*/
-}
-
-/* styles for desktop */
-@media (min-width: 992px) {
-    /*.admin-container {*/
-    /*    width: 320px;*/
-    /*    margin: auto;*/
-    /*}*/
-}
-
 
 /* --------------------Forms-------------------- */
 label {

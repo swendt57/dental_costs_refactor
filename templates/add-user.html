@@ -3,13 +3,13 @@
 
     <div class="container admin-container">
 
-        <h3>Add a System User</h3>
+        <h3>Register</h3>
 
         <p>Asterisks (*) indicate required fields</p>
 
         <form action="{{ url_for('insert_user') }}" method="POST">
             {% include 'user-form-content.html' %}
-            <button class="btn btn-primary" type="submit">Insert User</button>
+            <button class="btn btn-primary" type="submit">Register</button>
         </form>
 
     </div>

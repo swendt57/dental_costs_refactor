@@ -3,13 +3,16 @@
 
     <div class="container comments-container">
 
-        <h3>User Comments</h3>
-
+        <div>
+            <h3 id="comment-head">User Comments</h3>
+             {%  if session.username and session.profile.role %}
+                <a href='{{ url_for('add_comment') }}'><input type="button" id="comment-btn" class="btn" value='Add a Comment'></a>
+            {% endif %}
+        </div>
 
         <dl>
             {% for comment in comments %}
                 <dt><strong>{{ comment.dentist }}</strong> - {{ comment.comment }}</dt>
-                {#            <p><strong>{{ comment.dentist }}</strong> - {{ comment.user.first_name }} {{ comment.user.last_name[0] }} - {{ comment.formatted_date }}</p>#}
                 <dd>{{ comment.user.first_name }} {{ comment.user.last_name[0] }} - {{ comment.formatted_date }}</dd>
             {% endfor %}
         </dl>
