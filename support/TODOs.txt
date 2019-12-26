@@ -14,7 +14,7 @@ DONE - hide admin function except for admins
 
 prod vs dev configs and such
 
-remove comment button from small footers
+make icons in footer responsive
 
 
 
