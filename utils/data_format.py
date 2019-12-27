@@ -1,28 +1,35 @@
 import copy
 
 
+def restructure_data(data):
+    restructured_json = restructure_dental_json(data)
+    print(restructured_json)
+    expanded_json = expand_data(restructured_json)
+    return expanded_json
+
+
 def restructure_dental_json(data):
+
     for elem in data:
+
         if elem['area'] == 'sd':
-            elem['city'] = elem['city'] = 'San Diego'
+            elem['city'] = 'San Diego'
         elif elem['area'] == 'tj':
-            elem['city'] = elem['city'] = 'Tijuana'
+            elem['city'] = 'Tijuana'
 
         if elem['state'] == 'ca':
-            elem['state'] = elem['state'] = 'CA'
+            elem['state'] = 'CA'
         elif elem['state'] == 'tj':
-            elem['state'] = elem['state'] = 'Baja California'
+            elem['state'] = 'Baja California'
 
         if elem['mock_data']:
-            elem['mock_data'] = elem['mock_data'] = 'Mock Data'
+            elem['mock_data'] = 'Mock Data'
         elif not elem['mock_data']:
-            elem['mock_data'] = elem['mock_data'] = 'Actual Data'
+            elem['mock_data'] = 'Actual Data'
 
         elem['fake_data'] = elem.pop('mock_data')
 
-    expanded_json = expand_data(data)
-
-    return expanded_json
+    return data
 
 
 def expand_data(data):

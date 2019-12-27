@@ -7,10 +7,13 @@ import time
 import json
 from flask_login import LoginManager
 from flask_marshmallow import Marshmallow
+from marshmallow import Schema, ValidationError
 
 from data import dentist_dao, user_dao, user_comment_dao
 from utils.data_format import *
 from model.dentist import DentistSchema
+from tests import python_tests
+from model.user import UserSchema
 
 app = Flask(__name__)
 
@@ -52,17 +55,17 @@ def login():
         user = mongo.db.users.find({'username': request.form['username']})
         json_text = dumps(user)
         parsed_json = json.loads(json_text)
-        print(parsed_json[0]['_id']['$oid'])
-        session['profile'] = {"id": parsed_json[0]['_id']['$oid'], 'first_name': parsed_json[0]['first_name'], 'last_name': parsed_json[0]['last_name'], 'role': parsed_json[0]['role']}
+        print(parsed_json)
+        if parsed_json:
+            session['profile'] = {"id": parsed_json[0]['_id']['$oid'], 'first_name': parsed_json[0]['first_name'],
+                              'last_name': parsed_json[0]['last_name'], 'role': parsed_json[0]['role']}
 
-        # should send them back from whence they came, if possible
-        return redirect(url_for('index'))
-    return '''
-        <form method="post">
-            <p><input type=text name=username>
-            <p><input type=submit value=Login>
-        </form>
-    '''
+            # TODO should send them back from whence they came, if possible
+            return redirect(url_for('index'))
+        else:
+            flash("That username is not in the system")
+
+    return render_template('login-form.html', title='Log in', page='.home' )
 
 
 @app.route('/logout')
@@ -129,8 +132,10 @@ def export_dentists():
         json_text = dumps(dentists)  # converts cursor to json
         parsed_json = json.loads(json_text)  # parses the json
 
+        print(parsed_json)
+
         # restructure the data
-        restructured_json = restructure_dental_json(parsed_json)
+        restructured_json = restructure_data(parsed_json)
 
         # save the file
         f = open("static/data/combined_flat.json", "w")
@@ -141,12 +146,6 @@ def export_dentists():
 
     flash("You do not have proper permissions")
     return redirect(url_for('index'))
-
-# @app.route('/run-tests')
-# def run_tests():
-#     restructure_dental_json('static/data/combined_flat.json')
-#     # copy_elements('static/data/test_out.json')
-#     return 'happy!'
 
 
 @app.route('/add-dentist')
@@ -209,16 +208,25 @@ def add_user():
 
 @app.route('/insert-user', methods=['POST'])
 def insert_user():
+    try:
+        UserSchema().load(request.form)
 
-    # Check if username is free
-    user = user_dao.retrieve_all_with_filter(mongo, {'username': request.form.get('username')})
-    print(user.count())
-    if user.count() == 0:
-        user_dao.insert_one(mongo, request)
-        return render_template('registered.html', title='Registered', page='.home')
+        # Check if username is free
+        user = user_dao.retrieve_all_with_filter(mongo, {'username': request.form.get('username')})
+        # if it is, insert the new user
+        if user.count() == 0:
+            user_dao.insert_one(mongo, request)
+            return render_template('registered.html', title='Registered', page='.home')
 
-    flash("That username is already taken. Please select another.")
-    return redirect(url_for('add_user'))
+        flash("That username is already taken. Please select another.")
+        return render_template('add-user.html', user=request.form, title='Add a User', page='.admin')
+
+    except ValidationError as error:
+        if request.method == 'POST':
+            for message in error.messages:
+                # print(message)
+                flash(str(message) + " -- " + error.messages[message][0])
+            return render_template('add-user.html', user=request.form, title='Add a User', page='.admin')
 
 
 @app.route('/edit-user/<user_id>')
@@ -268,6 +276,13 @@ def insert_comment():
 
     flash("You must log in to leave a comment")
     return redirect(url_for('get_comments'))
+
+
+# @app.route('/run-tests')
+# def run_tests():
+#     restructure_data('data provided in test')
+#     expand_data('data provided in test')
+#     return 'happy!'
 
 
 # using 'environ.get' caused problems, using 'getenv' instead

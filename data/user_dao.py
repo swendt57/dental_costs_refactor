@@ -1,7 +1,9 @@
 from bson.objectid import ObjectId
 
 
+from model.user import UserSchema
 # need to validate that username is unique!!
+
 
 def assemble_user_dict(request):
     return {

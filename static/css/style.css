@@ -84,6 +84,10 @@ p {
     .btn {
         font-size: 16px;
     }
+
+    .footnote {
+        font-size: 13px;
+    }
 }
 
 /* styles for desktop */
@@ -102,6 +106,10 @@ p {
 
     .btn {
         font-size: 17px;
+    }
+
+    .footnote {
+        font-size: 14px;
     }
 }
 
@@ -729,42 +737,24 @@ footer {
     height: 2px;
     width: 40%;
     background-color: #0097ac;
-    margin: 10px auto 5px auto;
+    margin: 20px auto 5px auto;
     text-align: center;
 }
 
-/*.footer-btn {*/
-/*    padding: 0 10px;*/
-/*    margin-top: 15px;*/
-/*}*/
-
-/*.footer-comment-btn {*/
-/*    display: none;*/
-/*}*/
-
 footer i {
-    font-size: 40px;
-    /*background-color: gainsboro;*/
-    /*margin: 20px 5px;*/
+    font-size: 30px;
 }
 
-/*.footer-icon {*/
-/*    margin-bottom: 20px;*/
-/*}*/
-
 .fa-stack {
-    /*font-size: 1rem;*/
     color: black;
-    margin: 0 20px 30px 0px;
-    /*background-color: red;*/
+    margin: 20px 20px 30px 0px;
 }
 
 strong.fa-stack {
-    /*padding-top: 20px;*/
-    font-size: 13px;
+    font-size: 11px;
+    color: #007E8C;
     margin: 0;
-    padding: 45px 0 0 0;
-
+    padding: 35px 0 0 0;
 }
 
 /* styles for tablet and above */
@@ -773,8 +763,13 @@ strong.fa-stack {
         font-size: 14px;
     }
 
-    .footer-comment-btn {
-        display: inline;
+    footer i {
+        font-size: 40px;
+    }
+
+    strong.fa-stack {
+        font-size: 13px;
+        padding: 45px 0 0 0;
     }
 }
 

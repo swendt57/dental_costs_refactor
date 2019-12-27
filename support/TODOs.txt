@@ -37,5 +37,15 @@ alpha order dentists once map table no longer needed
 
 allow order of dentists be set with up and down arrows on dentists admin page
 
+add pagination to comments
+
+add modals for logging in and registration?
+
+highlight fields in error
+
+better testing
+
+improve exception handling
+
 
 

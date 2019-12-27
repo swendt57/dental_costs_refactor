@@ -117,15 +117,19 @@
 
 <footer>
     <div class="container">
+        {%  if not session.username %}
         <a href='{{ url_for('add_user') }}'><span class="fa-stack"><i class="fas fa-user-edit fa-stack-1x" title="Register"></i><strong class="fa-stack">Register</strong></span></a>
         <a href='{{ url_for('login') }}'><span class="fa-stack"><i class="fas fa-sign-in-alt fa-stack-1x" title="Log in"></i><strong class="fa-stack">Log&nbsp;in</strong></span></a>
+        {%  endif %}
+        {%  if session.username %}
         <a href='{{ url_for('logout') }}'><span class="fa-stack"><i class="fas fa-sign-out-alt fa-stack-1x" title="Log out"></i><strong class="fa-stack">Log&nbsp;out</strong></span></a>&nbsp;
         <a href='{{ url_for('add_comment') }}'><span class="fa-stack"><i class="fas fa-comment fa-stack-1x" title="Add a Comment"></i><strong class="fa-stack">Comment</strong></span></a>
+        {%  endif %}
     </div>
         <hr class="footer-hr">
         <p class="footer-text">Map data is &copy;2019 by Google &mdash; Top 10 lists are &copy;2019 Yelp Inc.</p>
-        <p class="footer-text footer-spacing">Role is:
-            {% if session.profile %}{{ session.profile.role }}{% else %} NOT LOGGED IN{% endif %}</p>
+        <p class="footer-text footer-spacing">User is:
+            {% if session.profile %}{{ session.profile.first_name }} {{ session.profile.last_name[0] }}{% else %} Not logged in{% endif %}</p>
 
 </footer>
 

@@ -68,26 +68,26 @@
     </div>
 </div>
 <div class="form-row">
-    <div class="col-4 col-lg-2">
-        <p>Average Costs (US dollars)</p>
+    <div class="col-6 col-lg-2">
+        <p>Average Costs in US dollars</p>
     </div>
-    <div class="col-4 col-lg-2">
+    <div class="col-6 col-lg-2">
         <label for="cleaning">Adult Cleaning</label>
         <input type="number" class="form-control" id="cleaning" name="cleaning" placeholder="$$" value="{% if dentist %}{{ dentist.cleaning }}{% endif %}" required>
     </div>
-    <div class="col-4 col-lg-2">
+    <div class="col-6 col-lg-2">
         <label for="filling">Composite Filling</label>
         <input type="number" class="form-control" id="filling" name="filling" placeholder="$$" value="{% if dentist %}{{ dentist.filling }}{% endif %}" required>
     </div>
-    <div class="col-4 col-lg-2">
+    <div class="col-6 col-lg-2">
         <label for="extraction">Extraction</label>
         <input type="number" class="form-control" id="extraction" name="extraction" placeholder="$$" value="{% if dentist %}{{ dentist.extraction }}{% endif %}" required>
     </div>
-    <div class="col-4 col-lg-2">
+    <div class="col-6 col-lg-2">
         <label for="root_canal">Root Canal</label>
         <input type="number" class="form-control" id="root_canal" name="root_canal" placeholder="$$" value="{% if dentist %}{{ dentist.root_canal }}{% endif %}" required>
     </div>
-    <div class="col-4 col-lg-2">
+    <div class="col-6 col-lg-2">
         <label for="crown">Porcelain Crown</label>
         <input type="number" class="form-control" id="crown" name="crown" placeholder="$$"  value="{% if dentist %}{{ dentist.crown }}{% endif %}" required>
     </div>

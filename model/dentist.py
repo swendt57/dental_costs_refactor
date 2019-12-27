@@ -1,27 +1,32 @@
-from flask_marshmallow import Marshmallow, Schema, fields
-ma = Marshmallow()
+from flask_marshmallow import Marshmallow, Schema
+from marshmallow import fields, ValidationError
+from marshmallow.validate import Range
+
+
+def validate_length(str):
+    if len(str) == 0:
+        raise ValidationError("is required")
 
 
 class DentistSchema(Schema):
-    class Meta:
-        fields = ('name', 'address', 'cleaning')
-
-    # abbr = fields.Str()
-    # address = fields.Str()
-    # address2 = fields.Str()
-    # city = fields.Str()
-    # state = fields.Str()
-    # postal_code = fields.Str()
-    # area = fields.Str()
-    # phone = fields.Str()
-    # website = fields.Str()
-    # latitude = fields.Str()
-    # longitude = fields.Str()
-    # cleaning = fields(int)
-    # filling = fields.Str()
-    # extraction = fields.Str()
-    # root_canal = fields.Str()
-    # crown = fields.Str()
-    # mock_data = fields.Bool()
+    name = fields.Str(required=True, validate=validate_length, error_messages={"required": "is required"})
+    abbreviation = fields.Str(required=True, validate=validate_length, error_messages={"required": "is required"})
+    address = fields.Str(required=True, validate=validate_length, error_messages={"required": "is required"})
+    address2 = fields.Str()
+    city = fields.Str(required=True, validate=validate_length, error_messages={"required": "is required"})
+    state = fields.Str(required=True, validate=validate_length, error_messages={"required": "is required"})
+    postal_code = fields.Str()
+    area = fields.Str(required=True, validate=validate_length, error_messages={"required": "is required"})
+    phone = fields.Str()
+    website = fields.Str()
+    latitude = fields.Number(required=True, validate=[Range(min=-90, max=90, error="must be between -90 and 90")])
+    longitude = fields.Number(required=True, validate=[Range(min=-180, max=180, error="must be between -180 and 180")])
+    cleaning = fields.Integer(strict=True, required=True, validate=[Range(min=0, error="must be a positive whole number")])
+    filling = fields.Integer(strict=True, required=True, validate=[Range(min=0, error="must be a positive whole number")])
+    extraction = fields.Integer(strict=True, required=True, validate=[Range(min=0, error="must be a positive whole number")])
+    root_canal = fields.Integer(strict=True, required=True, validate=[Range(min=0, error="must be a positive whole number")])
+    crown = fields.Integer(strict=True, required=True, validate=[Range(min=0, error="must be a positive whole number")])
+    mock_data = fields.Bool(required=True)
+    is_active = fields.Bool(required=True, default=False)
 
 

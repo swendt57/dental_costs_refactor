@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container admin-container">
+
+    <h3>Log In</h3>
+
+    <form action="{{ url_for('login') }}" method="POST">
+    <div class="form-row">
+        <div class="col-6 col-lg-4">
+            <label for="username">Username*</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Username"
+                   value="{% if user %}{{ user.first_name }}{% endif %}" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-6 col-lg-4">
+            <label for="password">Password (not required at this time)</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+                   value="{% if user %}{{ user.password }}{% endif %}" disabled>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Log in</button>
+    </form>
+
+</div>
+
+{%  endblock %}

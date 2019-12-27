@@ -7,8 +7,13 @@
             <h3 id="comment-head">User Comments</h3>
              {%  if session.username and session.profile.role %}
                 <a href='{{ url_for('add_comment') }}'><input type="button" id="comment-btn" class="btn" value='Add a Comment'></a>
+             {% else %}
+                 <a href='{{ url_for('login') }}'><input type="button" id="comment-btn" class="btn" mydata="from_comments"  value='Log in'></a>
             {% endif %}
         </div>
+        {%  if not session.username %}
+        <p class="footnote" align="right">You must be logged in to leave a comment</p>
+        {% endif %}
 
         <dl>
             {% for comment in comments %}

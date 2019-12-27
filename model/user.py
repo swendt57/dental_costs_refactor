@@ -1,29 +1,17 @@
-from flask_login import UserMixin
+from flask import flash
+from flask_marshmallow import Marshmallow, Schema
+from marshmallow import fields, ValidationError
+
+fields.Field.default_error_messages["required"] = "You missed something!"
 
 
-class User(UserMixin):
+def validate_length(str):
+    if len(str) == 0:
+        raise ValidationError("is required")
 
-    first_name = ''
-    last_name = ''
-    username = ''
-    role = ''
 
-    @staticmethod
-    def test():
-        return "working!"
-
-    # @staticmethod
-    # def is_authenticated(self):
-    #     return True
-    #
-    # @staticmethod
-    # def is_active():
-    #     return True
-    #
-    # @staticmethod
-    # def is_anonymous():
-    #     return True
-    #
-    # @staticmethod
-    # def get_id():
-    #     return "something"
+class UserSchema(Schema):
+    first_name = fields.Str(required=True, validate=validate_length, error_messages={"required": "is required"})
+    last_name = fields.Str(required=True, validate=validate_length, error_messages={"required": "is required"})
+    username = fields.Str(required=True, validate=validate_length, error_messages={"required": "is required"})
+    role = fields.Str(required=True, default='user')

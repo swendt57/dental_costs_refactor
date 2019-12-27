@@ -2,21 +2,27 @@
     <div class="col-6 col-lg-4">
         <label for="first_name">First Name*</label>
         <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name"
-               value="{% if user %}{{ user.first_name }}{% endif %}" required>
+               value="{% if user %}{{ user.first_name }}{% endif %}">
     </div>
 </div>
 <div class="form-row">
     <div class="col-6 col-lg-4">
         <label for="last_name">Last Name*</label>
         <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name"
-               value="{% if user %}{{ user.username }}{% endif %}" required>
+               value="{% if user %}{{ user.last_name }}{% endif %}">
     </div>
 </div>
 <div class="form-row">
     <div class="col-6 col-lg-4">
-        <label for="username">Userame*</label>
+        <label for="username">Username*</label>
         <input type="text" class="form-control" id="username" name="username" placeholder="Username"
-               value="{% if user %}{{ user.first_name }}{% endif %}" required>
+               value="{% if user %}{{ user.username }}{% endif %}">
+    </div>
+</div>
+<!-- hard coding role on add-user for now -->
+<div class="form-row">
+    <div class="col-6 col-lg-4">
+        <input type="hidden" class="form-control" id="role" name="role" value="{% if user %}{{ user.role }}{{ else }}user{% endif %}">
     </div>
 </div>
 <div class="form-row">
