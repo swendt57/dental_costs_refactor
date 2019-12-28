@@ -12,8 +12,8 @@ from marshmallow import Schema, ValidationError
 from data import dentist_dao, user_dao, user_comment_dao
 from utils.data_format import *
 from model.dentist import DentistSchema
-from tests import python_tests
 from model.user import UserSchema
+from model.comment import CommentSchema
 
 app = Flask(__name__)
 
@@ -160,8 +160,18 @@ def add_dentist():
 @app.route('/insert-dentist', methods=['POST'])
 def insert_dentist():
     if session['profile'] and session['profile']['role'] == 'admin':
-        dentist_dao.insert_one(mongo, request)
-        return redirect(url_for('get_dentists'))
+
+        try:
+            DentistSchema().load(request.form)
+
+            dentist_dao.insert_one(mongo, request)
+            return redirect(url_for('get_dentists'))
+
+        except ValidationError as error:
+            if request.method == 'POST':
+                for message in error.messages:
+                    flash(str(message) + " -- " + error.messages[message][0])
+                return render_template('add-dentist.html', dentist=request.form, title='Add a Dentist', page='.admin')
 
     flash("You do not have proper permissions")
     return redirect(url_for('index'))
@@ -181,13 +191,24 @@ def edit_dentist(dentist_id):
 @app.route('/update-dentist/<dentist_id>', methods=['POST'])
 def update_dentist(dentist_id):
     if session['profile'] and session['profile']['role'] == 'admin':
-        dentist_dao.update(mongo, request, dentist_id)
-        return redirect(url_for('get_dentists'))
+
+        try:
+            DentistSchema().load(request.form)
+
+            dentist_dao.update(mongo, request)
+            return redirect(url_for('get_dentists'))
+
+        except ValidationError as error:
+            if request.method == 'POST':
+                for message in error.messages:
+                    flash(str(message) + " -- " + error.messages[message][0])
+                return render_template('edit-dentist.html', dentist=request.form, title='Edit a Dentist', page='.admin')
 
     flash("You do not have proper permissions")
     return redirect(url_for('index'))
 
 # **************USERS****************************
+
 
 @app.route('/get-users')
 def get_users():
@@ -200,6 +221,7 @@ def get_users():
 
     flash("You do not have proper permissions")
     return redirect(url_for('index'))
+
 
 @app.route('/add-user')
 def add_user():
@@ -241,12 +263,22 @@ def edit_user(user_id):
 
 @app.route('/update-user/<user_id>', methods=['POST'])
 def update_user(user_id):
-    if session['profile'] and session['profile']['role'] == 'admin':
-        user_dao.update(mongo, request, user_id)
-        return redirect(url_for('get_users'))
+    try:
+        UserSchema().load(request.form)
 
-    flash("You do not have proper permissions")
-    return redirect(url_for('index'))
+        if session['profile'] and session['profile']['role'] == 'admin':
+            user_dao.update(mongo, request, user_id)
+            return redirect(url_for('get_users'))
+
+        flash("You do not have proper permissions")
+        return redirect(url_for('index'))
+
+    except ValidationError as error:
+        if request.method == 'POST':
+            for message in error.messages:
+                # print(message)
+                flash(str(message) + " -- " + error.messages[message][0])
+            return render_template('add-user.html', user=request.form, title='Add a User', page='.admin')
 
 
 # **************COMMENTS****************************
@@ -270,19 +302,22 @@ def add_comment():
 
 @app.route('/insert-comment', methods=['POST'])
 def insert_comment():
-    if session['profile'] and session['profile']['role'] == 'user':
-        user_comment_dao.insert_one(mongo, request)
+    try:
+        CommentSchema().load(request.form)
+
+        if session['profile'] and session['profile']['role']:
+            user_comment_dao.insert_one(mongo, request)
+            return redirect(url_for('get_comments'))
+
+        flash("You must log in to leave a comment")
         return redirect(url_for('get_comments'))
-
-    flash("You must log in to leave a comment")
-    return redirect(url_for('get_comments'))
-
-
-# @app.route('/run-tests')
-# def run_tests():
-#     restructure_data('data provided in test')
-#     expand_data('data provided in test')
-#     return 'happy!'
+    except ValidationError as error:
+        all_dentists = dentist_dao.retrieve_all(mongo)
+        if request.method == 'POST':
+            for message in error.messages:
+                flash(str(message) + " -- " + error.messages[message][0])
+            return render_template('add-comment.html', user_comment=request.form, dentists=all_dentists,
+                                   title='Add a Comment', page='.comments')
 
 
 # using 'environ.get' caused problems, using 'getenv' instead

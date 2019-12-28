@@ -14,8 +14,13 @@ DONE - hide admin function except for admins
 
 prod vs dev configs and such
 
-make icons in footer responsive
+DONE - make icons in footer responsive
 
+PROBLEMS 
+
+update dentists
+
+edit user
 
 
 

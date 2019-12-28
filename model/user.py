@@ -1,8 +1,5 @@
-from flask import flash
-from flask_marshmallow import Marshmallow, Schema
+from flask_marshmallow import Schema
 from marshmallow import fields, ValidationError
-
-fields.Field.default_error_messages["required"] = "You missed something!"
 
 
 def validate_length(str):
