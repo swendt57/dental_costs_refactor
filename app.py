@@ -195,7 +195,7 @@ def update_dentist(dentist_id):
         try:
             DentistSchema().load(request.form)
 
-            dentist_dao.update(mongo, request)
+            dentist_dao.update(mongo, request, dentist_id)
             return redirect(url_for('get_dentists'))
 
         except ValidationError as error:

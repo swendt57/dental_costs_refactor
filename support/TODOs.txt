@@ -6,21 +6,21 @@ DONE- create function to translate db data to JSON
 
 DONE- add "export" button to trigger JSON update
 
-add tests back in and add new ones
+DONE FOR NOW! - add tests back in and add new ones
 
 README file
 
 DONE - hide admin function except for admins
 
-prod vs dev configs and such
+DONE? - prod vs dev configs and such
 
 DONE - make icons in footer responsive
 
 PROBLEMS 
 
-update dentists
+FIXED - update dentists
 
-edit user
+FIXED - edit user
 
 
 
