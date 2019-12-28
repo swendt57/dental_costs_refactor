@@ -1,13 +1,13 @@
 import os
 
-from flask import Flask, render_template, redirect, request, url_for, session, flash, jsonify
+from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson.json_util import dumps
 import time
 import json
 from flask_login import LoginManager
 from flask_marshmallow import Marshmallow
-from marshmallow import Schema, ValidationError
+from marshmallow import ValidationError
 
 from data import dentist_dao, user_dao, user_comment_dao
 from utils.data_format import *
@@ -17,6 +17,7 @@ from model.comment import CommentSchema
 
 app = Flask(__name__)
 
+# Validation stuff
 ma = Marshmallow(app)
 
 # Keys
@@ -38,8 +39,6 @@ mongo = PyMongo(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-dentist_schema = DentistSchema()
-
 
 @app.route('/')
 @app.route('/index')
@@ -58,19 +57,19 @@ def login():
         print(parsed_json)
         if parsed_json:
             session['profile'] = {"id": parsed_json[0]['_id']['$oid'], 'first_name': parsed_json[0]['first_name'],
-                              'last_name': parsed_json[0]['last_name'], 'role': parsed_json[0]['role']}
+                                  'last_name': parsed_json[0]['last_name'], 'role': parsed_json[0]['role']}
 
             # TODO should send them back from whence they came, if possible
             return redirect(url_for('index'))
         else:
             flash("That username is not in the system")
 
-    return render_template('login-form.html', title='Log in', page='.home' )
+    return render_template('login-form.html', title='Log in', page='.home')
 
 
 @app.route('/logout')
 def logout():
-    # remove the username from the session and empty the profile if it's there
+    # remove the username from the session and empty the profile if it exists
     session.pop('username', None)
     session['profile'] = {}
 
@@ -108,11 +107,6 @@ def get_dentists():
         sd_dentists = dentist_dao.retrieve_all_with_filter(mongo, sd_filter)
         tj_dentists = dentist_dao.retrieve_all_with_filter(mongo, tj_filter)
 
-        # EXPERIMENT
-        result = dentist_schema.dump(sd_dentists)
-        for x in result:
-            print(x)
-
         return render_template('dentists.html', title='Dental Offices', page='.admin',
                                sd_dentists=sd_dentists, tj_dentists=tj_dentists)
 
@@ -131,8 +125,6 @@ def export_dentists():
         dentists = dentist_dao.retrieve_all_with_filter(mongo, {'is_active': True})
         json_text = dumps(dentists)  # converts cursor to json
         parsed_json = json.loads(json_text)  # parses the json
-
-        print(parsed_json)
 
         # restructure the data
         restructured_json = restructure_data(parsed_json)
@@ -162,6 +154,7 @@ def insert_dentist():
     if session['profile'] and session['profile']['role'] == 'admin':
 
         try:
+            # Validate input
             DentistSchema().load(request.form)
 
             dentist_dao.insert_one(mongo, request)
@@ -193,6 +186,7 @@ def update_dentist(dentist_id):
     if session['profile'] and session['profile']['role'] == 'admin':
 
         try:
+            # Validate input
             DentistSchema().load(request.form)
 
             dentist_dao.update(mongo, request, dentist_id)
@@ -206,6 +200,7 @@ def update_dentist(dentist_id):
 
     flash("You do not have proper permissions")
     return redirect(url_for('index'))
+
 
 # **************USERS****************************
 
@@ -231,6 +226,7 @@ def add_user():
 @app.route('/insert-user', methods=['POST'])
 def insert_user():
     try:
+        # Validate input
         UserSchema().load(request.form)
 
         # Check if username is free
@@ -264,6 +260,7 @@ def edit_user(user_id):
 @app.route('/update-user/<user_id>', methods=['POST'])
 def update_user(user_id):
     try:
+        # Validate input
         UserSchema().load(request.form)
 
         if session['profile'] and session['profile']['role'] == 'admin':
@@ -303,6 +300,7 @@ def add_comment():
 @app.route('/insert-comment', methods=['POST'])
 def insert_comment():
     try:
+        # Validate input
         CommentSchema().load(request.form)
 
         if session['profile'] and session['profile']['role']:
@@ -324,4 +322,4 @@ def insert_comment():
 if __name__ == '__main__':
     app.run(host=os.getenv('IP', '127.0.0.1'),
             port=os.getenv('PORT', '5000'),
-            debug=True)
+            debug=False)

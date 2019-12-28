@@ -9,7 +9,7 @@
 
         <form action="{{ url_for('update_user', user_id=user._id) }}" method="POST">
             {% include 'user-form-content.html' %}
-            <button class="btn btn-primary" type="submit">Update User</button>
+            <button class="btn btn-primary" type="submit">Update User</button>  <input class="btn btn-primary" type="reset" value="Reset Values">
         </form>
 
     </div>

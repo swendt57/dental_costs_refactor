@@ -1,4 +1,4 @@
-from flask_marshmallow import Marshmallow, Schema
+from flask_marshmallow import Schema
 from marshmallow import fields, ValidationError
 from marshmallow.validate import Range
 

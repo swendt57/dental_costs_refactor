@@ -51,7 +51,8 @@ https://github.com/swendt57/dental_costs_refactor/tree/master/support/mockups
   * Allows dentists can be added, edited, activated, and deactivated through the web interface
   * Allows the main dentist JSON file to be exported at will from the web interface
   * Users can use to register for the site, login and log out, and to upload comments
-* An improved **Location Maps** page that shows the dental office name in a tool tip when a user pauses on the icon
+* An improved **Location Maps** page that shows the dental office name over the icon and in a in a tool tip when a cursor 
+pauses over the icon. This allowed the removal of the legend tables below the maps.
 
 **Features from the original site:**
 
@@ -240,7 +241,7 @@ the issue completely.
 ### Deployment
 
 The website is currently deployed on Heroku at https://dental-costs.herokuapp.com/  
-These instructions are for the inital deployment of the app.
+These instructions are for the initial deployment of the app.
 1. From the terminal, log into Heroku > heroku login
 2. Verify that both Profile and requirements.txt files are both up-to-date. The requirements file can be updated by running this 
 on the terminal > pip3 freeze --local > requirements.txt

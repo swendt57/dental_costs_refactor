@@ -8,7 +8,7 @@
              {%  if session.username and session.profile.role %}
                 <a href='{{ url_for('add_comment') }}'><input type="button" id="comment-btn" class="btn" value='Add a Comment'></a>
              {% else %}
-                 <a href='{{ url_for('login') }}'><input type="button" id="comment-btn" class="btn" mydata="from_comments"  value='Log in'></a>
+                 <a href='{{ url_for('login') }}'><input type="button" id="comment-btn" class="btn"  value='Log in'></a>
             {% endif %}
         </div>
         {%  if not session.username %}

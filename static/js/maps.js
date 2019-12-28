@@ -54,7 +54,8 @@ $(document).ready
             let sdMarkers = sdLocations.map(function (location, i) {
                 return new google.maps.Marker({
                     position: location,
-                    label: labels[i % labels.length],
+                    label: {color: '#000000', backgroundColor: '#ccd', fontWeight: 'bold', fontSize: '13px', text: sdLocations[i].name},
+                    // label: labels[i % labels.length],
                     title: sdLocations[i].name,
                 });
             });
@@ -62,7 +63,8 @@ $(document).ready
             let tjMarkers = tjLocations.map(function (location, i) {
                 return new google.maps.Marker({
                     position: location,
-                    label: labels[i % labels.length],
+                    label: {color: '#000000', backgroundColor: '#ccd', fontWeight: 'bold', fontSize: '13px', text: tjLocations[i].name},
+                    // label: labels[i % labels.length],
                     title: tjLocations[i].name
                 });
             });
